@@ -1,0 +1,20 @@
+uploads = []
+generated = []
+
+[[outputs]]
+id = "BIZt6dFxJODZMM1nXV7B1"
+uri = "file://artifacts/brightchain/public/images/warehouse.jpg"
+type = "image"
+title = "modern warehouse logistics operations wide shot, clean, structured, premium"
+
+[[outputs]]
+id = "Y9q23gKRd-wMP8CWuU3by"
+uri = "file://artifacts/brightchain/public/images/work.jpg"
+type = "image"
+title = "close up of hands working on a laptop in a modern office, bright, professional, high quality"
+
+[[outputs]]
+id = "tRA5uAj0Sq3QP5qiJtdaA"
+uri = "file://artifacts/brightchain/public/images/hero-architecture.jpg"
+type = "image"
+title = "modern minimal office interior architecture warm neutral"

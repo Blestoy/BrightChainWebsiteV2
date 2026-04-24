@@ -1,0 +1,47 @@
+name: Build and Deploy to docs/
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v3
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'pnpm'
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Build
+        run: pnpm --filter @workspace/brightchain run build
+        env:
+          PORT: 3000
+          BASE_PATH: ./
+
+      - name: Copy build output to docs/
+        run: |
+          rm -rf docs
+          cp -r artifacts/brightchain/dist/public docs
+          cp docs/index.html docs/404.html
+
+      - name: Commit and push docs/
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add -A docs/
+          git diff --staged --quiet || git commit -m "chore: rebuild docs/ [skip ci]"
+          git push
