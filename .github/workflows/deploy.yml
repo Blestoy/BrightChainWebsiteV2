@@ -32,11 +32,12 @@ jobs:
           PORT: 3000
           BASE_PATH: ./
 
-      - name: Copy build output to docs/
+      - name: Copy build to docs/
         run: |
           rm -rf docs
           cp -r artifacts/brightchain/dist/public docs
           cp docs/index.html docs/404.html
+          touch docs/.nojekyll
 
       - name: Commit and push docs/
         run: |
