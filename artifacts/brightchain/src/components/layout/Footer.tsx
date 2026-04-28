@@ -17,8 +17,8 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-3 mb-6 inline-flex">
               <img
                 src="/brightchain-logo.png"
-                alt="BrightChain"
-                className="h-10 w-auto object-contain brightness-0 invert"
+                alt="BrightChain logo"
+                className="h-12 w-auto object-contain brightness-0 invert"
               />
             </Link>
             <p className="text-background/60 text-sm leading-relaxed max-w-sm mb-8">
