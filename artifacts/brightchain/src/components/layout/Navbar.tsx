@@ -47,7 +47,6 @@ export default function Navbar() {
           />
         </Link>
 
-        {/* Desktop Nav */}
         <nav className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <button
@@ -66,7 +65,6 @@ export default function Navbar() {
           </Button>
         </nav>
 
-        {/* Mobile Toggle */}
         <button
           className="md:hidden z-50 relative p-2 text-foreground"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -75,7 +73,6 @@ export default function Navbar() {
           {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
 
-        {/* Mobile Nav */}
         <AnimatePresence>
           {mobileMenuOpen && (
             <motion.div
