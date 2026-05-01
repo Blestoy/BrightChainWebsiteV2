@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>BrightChain | IT Project Management & Operations</title>
+  <title>BrightChain | Project Management & Operations</title>
   <meta name="description" content="BrightChain helpt organisaties met IT Project Management, PMO, M365 migraties, cloud transformaties, WMS implementaties en supply chain operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,7 +80,15 @@
   .signals{display:flex;gap:28px;flex-wrap:wrap;margin-top:58px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;font-weight:700;color:rgba(23,33,43,.76)}
   .check{color:var(--secondary);font-weight:900}
 
-  .visual{min-height:520px;border-radius:2px;background:linear-gradient(135deg,rgba(15,76,129,.08),rgba(232,216,189,.45),rgba(50,145,201,.12));display:flex;align-items:center;justify-content:center;position:relative}
+  .visual{
+  min-height:620px;
+  display:flex;
+  align-items:flex-end;
+  justify-content:center;
+  position:relative;
+  background:transparent;
+  overflow:hidden;
+}
   .visual-card{width:78%;padding:48px;background:rgba(255,253,248,.72);border:1px solid var(--border);box-shadow:0 30px 80px rgba(15,76,129,.14)}
   .visual-card h2{font-family:'Playfair Display',Georgia,serif;font-size:42px;line-height:1.05;margin:0;color:var(--primary)}
   .visual-card p{margin:22px 0 0;color:var(--muted)}
@@ -96,10 +104,11 @@
 }
 
 .hero-photo img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  object-position:center top;
+  width:auto;
+  height:620px;
+  max-width:100%;
+  object-fit:contain;
+  object-position:center bottom;
   display:block;
   animation:slideUpHero 1.1s ease-out both;
 }
