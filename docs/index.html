@@ -100,7 +100,11 @@
   .references-points div{font-weight:700;color:rgba(23,33,43,.78)}
 
   .stacked-card-area{position:relative;min-height:1280px}
-  .stacked-card-sticky{position:sticky;top:130px;height:520px}
+  .stacked-card-sticky{
+  position:sticky;
+  top:160px;
+  height:520px;
+}
   .stacked-cards{position:relative;height:430px}
 
   .ref-card{
@@ -163,7 +167,11 @@
     .references{padding:78px 0 0}
     .references-copy{position:relative;top:auto;margin-bottom:50px}
     .stacked-card-area{position:relative;min-height:1180px}
-    .stacked-card-sticky{position:sticky;top:92px;height:430px}
+    .stacked-card-sticky{
+  position:sticky;
+  top:125px;
+  height:430px;
+}
     .stacked-cards{position:relative;height:390px}
 
     .ref-card{
@@ -471,7 +479,7 @@
     if (!stackedArea) return;
 
     const rect = stackedArea.getBoundingClientRect();
-    const triggerOffset = window.innerWidth <= 900 ? 110 : 180;
+    const triggerOffset = window.innerWidth <= 900 ? 170 : 260;
     const speed = window.innerWidth <= 900 ? 230 : 280;
 
     const progress = Math.min(
