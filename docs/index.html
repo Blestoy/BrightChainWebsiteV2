@@ -5,9 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BrightChain | Project Management & Operations</title>
   <meta name="description" content="BrightChain helpt organisaties met IT Project Management, PMO, M365 migraties, cloud transformaties, WMS implementaties en supply chain operations." />
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+
 <style>
   :root{--bg:#f8f6f1;--card:#fffdf8;--text:#17212b;--muted:#5e6a76;--primary:#0f4c81;--secondary:#3291c9;--accent:#e8d8bd;--border:rgba(23,33,43,.12)}
   *{box-sizing:border-box}
@@ -24,53 +26,24 @@
   .brand{font-weight:800;letter-spacing:.06em;color:var(--primary);font-size:22px}
   .brand span{color:var(--secondary)}
 
-  .logo-brand{
-    display:flex;
-    align-items:center;
-  }
+  .logo-brand{display:flex;align-items:center}
+  .logo-brand img{height:56px;width:auto;display:block}
 
-  .logo-brand img{
-    height:56px;
-    width:auto;
-    display:block;
-  }
-  .footer-logo img{
-  height:52px;
-  width:auto;
-  display:block;
-}
+  .footer-logo img{height:52px;width:auto;display:block}
 
   .nav-links{display:flex;gap:28px;align-items:center}
   .nav-links a{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(23,33,43,.72)}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:15px 24px;font-weight:700;border:1px solid transparent;transition:.2s}
-  .btn-primary{
-  background:var(--primary);
-  color:#fff
-}
-
-.nav .btn-primary{
-  color:#fff !important;
-}
+  .btn-primary{background:var(--primary);color:#fff}
+  .nav .btn-primary{color:#fff !important}
   .btn-primary:hover{background:var(--secondary);transform:translateY(-1px)}
-  .btn-outline{
-  border-color:var(--border);
-  color:var(--text);
-  background:transparent;
-}
 
-.btn-outline:hover{
-  background:rgba(50,145,201,.5);
-  border-color:rgba(50,145,201,.5);
-  color:#fff;
-  transform:translateY(-1px);
-}
+  .btn-outline{border-color:var(--border);color:var(--text);background:transparent}
+  .btn-outline:hover{background:rgba(50,145,201,.5);border-color:rgba(50,145,201,.5);color:#fff;transform:translateY(-1px)}
 
   .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;position:relative;overflow:hidden}
   .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative}
-
-  .eyebrow{display:inline-flex;gap:10px;align-items:center;background:rgba(50,145,201,.12);color:var(--primary);border:1px solid rgba(50,145,201,.25);padding:7px 12px;font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:800;margin-bottom:28px}
-  .dot{width:7px;height:7px;border-radius:50%;background:var(--primary)}
 
   h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,6vw,78px);line-height:1.05;margin:0 0 26px;letter-spacing:-.035em}
   h1 em,.italic{font-style:italic;color:var(--primary)}
@@ -81,48 +54,36 @@
   .check{color:var(--secondary);font-weight:900}
 
   .visual{
-  min-height:620px;
-  display:flex;
-  align-items:flex-end;
-  justify-content:center;
-  position:relative;
-  background:transparent;
-  overflow:hidden;
-}
-  .visual-card{width:78%;padding:48px;background:rgba(255,253,248,.72);border:1px solid var(--border);box-shadow:0 30px 80px rgba(15,76,129,.14)}
-  .visual-card h2{font-family:'Playfair Display',Georgia,serif;font-size:42px;line-height:1.05;margin:0;color:var(--primary)}
-  .visual-card p{margin:22px 0 0;color:var(--muted)}
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    background:transparent;
+    overflow:visible;
+  }
 
   .hero-photo{
-  overflow:hidden;
-  background:linear-gradient(
-    135deg,
-    rgba(15,76,129,.08),
-    rgba(232,216,189,.45),
-    rgba(50,145,201,.12)
-  );
-}
-
-.hero-photo img{
-  width:auto;
-  height:620px;
-  max-width:100%;
-  object-fit:contain;
-  object-position:center bottom;
-  display:block;
-  animation:slideUpHero 1.1s ease-out both;
-}
-
-@keyframes slideUpHero{
-  from{
-    opacity:0;
-    transform:translateY(80px);
+    aspect-ratio:3/4;
+    max-width:430px;
+    width:100%;
+    overflow:hidden;
+    background:transparent;
   }
-  to{
-    opacity:1;
-    transform:translateY(0);
+
+  .hero-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center top;
+    display:block;
+    animation:slideUpHero 1.1s ease-out both;
   }
-}
+
+  @keyframes slideUpHero{
+    from{opacity:0;transform:translateY(80px)}
+    to{opacity:1;transform:translateY(0)}
+  }
+
   section{padding:105px 0}
   .section-card{background:var(--card)}
   .section-title{max-width:780px;margin-bottom:62px}
@@ -181,11 +142,9 @@
   @media(max-width:900px){
     .nav-links{display:none}
     .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
-    .visual{
-  display:flex;
-  min-height:420px;
-}
     .hero{min-height:auto}
+    .visual{display:flex}
+    .hero-photo{max-width:360px;margin:0 auto}
     .cards{gap:18px}
     .case{padding:28px}
     .metrics{flex-wrap:wrap}
@@ -220,21 +179,36 @@
     <section class="hero">
       <div class="container grid">
         <div>
-          <div class="eyebrow"><span class="dot"></span> Project Manager voor IT & Operations</div>
           <h1>Project Management <br><em>voor</em> IT en Supply Chain Operations</h1>
           <p class="lead">Van strategie naar uitvoering. Ik help organisaties complexe IT- en logistieke projecten succesvol realiseren — <strong>zonder ruis.</strong></p>
-          <div class="actions"><a class="btn btn-primary" href="#contact">Plan een kennismaking →</a><a class="btn btn-outline" href="#diensten">Bekijk mijn werkgebied</a></div>
-          <div class="signals"><span><span class="check">✓</span> Binnen 24 uur reactie</span><span><span class="check">✓</span> Vrijblijvende kennismaking</span><span><span class="check">✓</span> Direct inzetbaar</span></div>
+
+          <div class="actions">
+            <a class="btn btn-primary" href="#contact">Plan een kennismaking →</a>
+            <a class="btn btn-outline" href="#diensten">Bekijk mijn werkgebied</a>
+          </div>
+
+          <div class="signals">
+            <span><span class="check">✓</span> Binnen 24 uur reactie</span>
+            <span><span class="check">✓</span> Vrijblijvende kennismaking</span>
+            <span><span class="check">✓</span> Direct inzetbaar</span>
+          </div>
         </div>
-        <div class="visual hero-photo">
-  <img src="./rene-de-koning.png" alt="René de Koning">
-</div>
+
+        <div class="visual">
+          <div class="hero-photo">
+            <img src="./rene-de-koning.png" alt="René de Koning">
+          </div>
+        </div>
       </div>
     </section>
 
     <section id="diensten" class="section-card">
       <div class="container">
-        <div class="section-title"><div class="label">Expertise</div><h2>Complexe IT- én logistieke projecten. <span class="italic">Niet alleen bedenken — maar ook doen.</span></h2></div>
+        <div class="section-title">
+          <div class="label">Expertise</div>
+          <h2>Complexe IT- én logistieke projecten. <span class="italic">Niet alleen bedenken — maar ook doen.</span></h2>
+        </div>
+
         <div class="cards">
           <article class="card"><div class="icon">▣</div><h3>IT Project Management</h3><p>End-to-end project delivery met focus op resultaat. Van business case tot live-gang.</p><ul><li>• End-to-end project delivery</li><li>• Stakeholder management</li><li>• Agile / Prince2 pragmatisme</li></ul></article>
           <article class="card"><div class="icon">◇</div><h3>PMO & Structuur</h3><p>Het fundament onder verandering. Ik breng orde in chaos en grip op voortgang.</p><ul><li>• Opzetten projectorganisatie</li><li>• Roadmaps & governance</li><li>• Rapportages & KPI's</li></ul></article>
@@ -248,7 +222,12 @@
 
     <section id="resultaten">
       <div class="container">
-        <div class="section-title"><div class="label">Ervaring</div><h2>Impact in de praktijk.</h2><p>Mooie plannen zijn waardeloos zonder executiekracht. Een greep uit gerealiseerde projecten.</p></div>
+        <div class="section-title">
+          <div class="label">Ervaring</div>
+          <h2>Impact in de praktijk.</h2>
+          <p>Mooie plannen zijn waardeloos zonder executiekracht. Een greep uit gerealiseerde projecten.</p>
+        </div>
+
         <div class="cases">
           <article class="case"><div><div class="cat">IT Transformatie</div><h3>M365 Workplace Migration</h3><div class="metrics"><div class="metric"><strong>1500+</strong><span>gebruikers gemigreerd</span></div><div class="metric"><strong>4</strong><span>M365 tenant migraties</span></div></div></div><p>Grootschalige migratie naar M365 werkplekken. Naast de technische uitrol lag de focus sterk op adoptie, resulterend in direct verbeterde samenwerking en remote werken voor de hele organisatie.</p></article>
           <article class="case"><div><div class="cat">Project Management</div><h3>IT Post-Merger Integratie</h3><div class="metrics"><div class="metric"><strong>3</strong><span>maanden doorlooptijd</span></div><div class="metric"><strong>9</strong><span>locaties aangesloten</span></div></div></div><p>Complexe IT integratie na overname. Door strakke regie en pragmatische keuzes werd de integratie ruim binnen deadline afgerond met minimale verstoring van de kritische operatie.</p></article>
@@ -260,88 +239,126 @@
     <section id="over-mij" class="about">
       <div class="container about-grid">
         <div class="portrait">
-          <img src="rene-de-koning.png" alt="René de Koning — IT Project Manager">
-            </div>
-        <div><div class="label" style="color:#e8d8bd">René de Koning</div><h2>Van werkvloer <br><span style="opacity:.72;font-style:italic">tot directie.</span></h2><p>Ik ben René de Koning, IT Project Manager met een sterke achtergrond in supply chain en logistiek. Ik werk op het snijvlak van IT en operatie en help organisaties complexe veranderingen realiseren.</p><p>Mijn kracht ligt in het combineren van structuur, pragmatisme en een hands-on aanpak — van strategie tot uitvoering. Ik beweeg moeiteloos tussen werkvloer en management en zorg dat plannen ook écht gerealiseerd worden.</p><div class="usp"><div>IT Project Management & Operations</div><div>Hands-on én strategisch</div><div>Warehouse / Supply Chain & IT</div><div>Complexe stakeholdervelden</div></div></div>
+          <img src="./rene-de-koning.png" alt="René de Koning — IT Project Manager">
+        </div>
+
+        <div>
+          <div class="label" style="color:#e8d8bd">René de Koning</div>
+          <h2>Van werkvloer <br><span style="opacity:.72;font-style:italic">tot directie.</span></h2>
+          <p>Ik ben René de Koning, IT Project Manager met een sterke achtergrond in supply chain en logistiek. Ik werk op het snijvlak van IT en operatie en help organisaties complexe veranderingen realiseren.</p>
+          <p>Mijn kracht ligt in het combineren van structuur, pragmatisme en een hands-on aanpak — van strategie tot uitvoering. Ik beweeg moeiteloos tussen werkvloer en management en zorg dat plannen ook écht gerealiseerd worden.</p>
+
+          <div class="usp">
+            <div>IT Project Management & Operations</div>
+            <div>Hands-on én strategisch</div>
+            <div>Warehouse / Supply Chain & IT</div>
+            <div>Complexe stakeholdervelden</div>
+          </div>
+        </div>
       </div>
     </section>
 
-<section id="contact" class="section-card">
-  <div class="container contact-grid">
+    <section id="contact" class="section-card">
+      <div class="container contact-grid">
+        <div>
+          <div class="section-title">
+            <div class="label">Contact</div>
+            <h2>Klaar om te <span class="italic">realiseren?</span></h2>
+            <p>Of het nu gaat om een M365 migratie, een WMS implementatie of projectregie — laten we kennismaken.</p>
+          </div>
 
-    <div>
-      <div class="section-title">
-        <div class="label">Contact</div>
-        <h2>Klaar om te <span class="italic">realiseren?</span></h2>
-        <p>Of het nu gaat om een M365 migratie, een WMS implementatie of projectregie — laten we kennismaken.</p>
+          <p><strong>Direct contact</strong><br><a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a></p>
+
+          <p><strong>Connect</strong><br><a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel →</a></p>
+        </div>
+
+        <div class="contact-panel">
+          <h3>Plan een kennismaking</h3>
+
+          <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
+            <div class="form-row">
+              <label>Naam</label>
+              <input type="text" name="naam" required placeholder="Uw volledige naam">
+            </div>
+
+            <div class="form-row">
+              <label>E-mail</label>
+              <input type="email" name="email" required placeholder="uw@email.nl">
+            </div>
+
+            <div class="form-row">
+              <label>Telefoonnummer</label>
+              <input type="tel" name="telefoon" placeholder="Optioneel">
+            </div>
+
+            <div class="form-row">
+              <label>Bericht</label>
+              <textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea>
+            </div>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
+
+            <button class="btn btn-primary" style="width:100%" type="submit">Verstuur bericht</button>
+          </form>
+        </div>
       </div>
-
-      <p>
-        <strong>Direct contact</strong><br>
-        <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>
-      </p>
-
-      <p>
-        <strong>Connect</strong><br>
-        <a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel →</a>
-      </p>
-    </div>
-
-    <div class="contact-panel">
-      <h3>Plan een kennismaking</h3>
-
-      <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
-
-        <div class="form-row">
-          <label>Naam</label>
-          <input type="text" name="naam" required placeholder="Uw volledige naam">
-        </div>
-
-        <div class="form-row">
-          <label>E-mail</label>
-          <input type="email" name="email" required placeholder="uw@email.nl">
-        </div>
-
-        <div class="form-row">
-          <label>Telefoonnummer</label>
-          <input type="tel" name="telefoon" placeholder="Optioneel">
-        </div>
-
-        <div class="form-row">
-          <label>Bericht</label>
-          <textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea>
-        </div>
-
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
-
-        <button class="btn btn-primary" style="width:100%" type="submit">
-          Verstuur bericht
-        </button>
-
-      </form>
-    </div>
-
-  </div>
-</section>
+    </section>
   </main>
 
   <footer class="footer">
-    <div class="container"><div class="footer-grid"><div><div class="footer-logo">
-  <img src="./BrightChain white no bg.png" alt="BrightChain Logo">
-</div><p>Freelance IT Project Manager gespecialiseerd in M365 migraties, cloud transformaties en supply chain optimalisatie. Resultaatgericht en hands-on.</p><p><a href="mailto:info@brightchain.nl">info@brightchain.nl</a><br><a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel</a></p></div><div><h4>Navigatie</h4><ul><li><a href="#diensten">Diensten</a></li><li><a href="#resultaten">Ervaring</a></li><li><a href="#over-mij">Over mij</a></li><li><a href="#contact">Contact</a></li></ul></div><div><h4>Expertise</h4><ul><li>IT Project Manager Nederland</li><li>M365 migratie specialist</li><li>WMS implementatie consultant</li><li>Supply chain IT consultant</li></ul></div></div><div class="bottom"><span>© 2026 BrightChain. Alle rechten voorbehouden.</span><span>KvK: 98331914 · Amersfoort, Nederland</span></div></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="./BrightChain white no bg.png" alt="BrightChain Logo">
+          </div>
+
+          <p>Freelance IT Project Manager gespecialiseerd in M365 migraties, cloud transformaties en supply chain optimalisatie. Resultaatgericht en hands-on.</p>
+
+          <p>
+            <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a><br>
+            <a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel</a>
+          </p>
+        </div>
+
+        <div>
+          <h4>Navigatie</h4>
+          <ul>
+            <li><a href="#diensten">Diensten</a></li>
+            <li><a href="#resultaten">Ervaring</a></li>
+            <li><a href="#over-mij">Over mij</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Expertise</h4>
+          <ul>
+            <li>IT Project Manager Nederland</li>
+            <li>M365 migratie specialist</li>
+            <li>WMS implementatie consultant</li>
+            <li>Supply chain IT consultant</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="bottom">
+        <span>© 2026 BrightChain. Alle rechten voorbehouden.</span>
+        <span>KvK: 98331914 · Amersfoort, Nederland</span>
+      </div>
+    </div>
   </footer>
-  <script>
+
+<script>
   const form = document.getElementById("contact-form");
 
   form.addEventListener("submit", async function(e) {
-
     e.preventDefault();
 
     const formData = new FormData(form);
 
     try {
-
       const response = await fetch(form.action, {
         method: "POST",
         body: formData,
@@ -351,24 +368,16 @@
       });
 
       if (response.ok) {
-
         alert("Bedankt voor uw interesse. Wij nemen zo spoedig mogelijk contact met u op.");
-
         form.reset();
-
       } else {
-
         alert("Er is iets misgegaan. Probeer het later opnieuw.");
-
       }
-
     } catch (error) {
-
       alert("Er is iets misgegaan. Probeer het later opnieuw.");
-
     }
-
   });
 </script>
+
 </body>
 </html>
