@@ -18,18 +18,13 @@
   a{color:inherit;text-decoration:none}
 
   .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-  .serif{font-family:'Playfair Display',Georgia,serif}
-
   .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(248,246,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
   .nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between}
-
   .brand{font-weight:800;letter-spacing:.06em;color:var(--primary);font-size:22px}
   .brand span{color:var(--secondary)}
-
   .logo-brand{display:flex;align-items:center}
   .logo-brand img{height:56px;width:auto;display:block}
   .footer-logo img{height:52px;width:auto;display:block}
-
   .nav-links{display:flex;gap:24px;align-items:center}
   .nav-links a{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(23,33,43,.72)}
 
@@ -37,16 +32,13 @@
   .btn-primary{background:var(--primary);color:#fff}
   .nav .btn-primary{color:#fff !important}
   .btn-primary:hover{background:var(--secondary);transform:translateY(-1px)}
-
   .btn-outline{border-color:var(--border);color:var(--text);background:transparent}
   .btn-outline:hover{background:rgba(50,145,201,.5);border-color:rgba(50,145,201,.5);color:#fff;transform:translateY(-1px)}
 
   .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;position:relative;overflow:hidden}
   .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative}
-
   h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,6vw,78px);line-height:1.05;margin:0 0 26px;letter-spacing:-.035em}
   h1 em,.italic{font-style:italic;color:var(--primary)}
-
   .lead{font-size:clamp(18px,2vw,22px);color:rgba(23,33,43,.72);max-width:720px;margin:0 0 34px;font-weight:300}
   .actions{display:flex;gap:14px;flex-wrap:wrap}
   .signals{display:flex;gap:28px;flex-wrap:wrap;margin-top:58px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;font-weight:700;color:rgba(23,33,43,.76)}
@@ -98,7 +90,7 @@
   .usp{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
   .usp div{border:1px solid rgba(255,255,255,.22);padding:16px;border-radius:16px;font-weight:700;font-size:14px}
 
-  .references{background:var(--bg);padding:120px 0;overflow:visible}
+  .references{background:var(--bg);padding:120px 0 40px;overflow:visible}
   .references-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:flex-start}
   .references-copy{position:sticky;top:130px}
   .references-copy .label{font-size:13px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--primary);margin-bottom:14px}
@@ -134,7 +126,6 @@
   .ref-card:nth-child(2){z-index:3;transform:rotate(-7deg)}
   .ref-card:nth-child(3){z-index:2;transform:rotate(-14deg)}
   .ref-card:nth-child(4){z-index:1;transform:rotate(-21deg)}
-
   .ref-card.is-gone{transform:translateY(-150px) rotate(8deg) !important;opacity:0;pointer-events:none}
 
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
@@ -155,208 +146,44 @@
   .mobile-menu{display:none}
 
   @media(max-width:900px){
+    .nav-links{display:none}
+    .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid,.references-grid{grid-template-columns:1fr}
+    .hero{min-height:auto}
+    .visual{display:flex}
+    .hero-photo{max-width:360px;margin:0 auto}
+    .cards{gap:18px}
+    .case{padding:28px}
+    .metrics{flex-wrap:wrap}
+    .usp{grid-template-columns:1fr}
+    .nav-inner{height:72px}
+    section{padding:78px 0}
+    .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:var(--primary)}
+    .logo-brand img{height:44px}
 
-  .nav-links{
-    display:none
+    .references{padding:78px 0 0}
+    .references-copy{position:relative;top:auto;margin-bottom:50px}
+    .stacked-card-area{position:relative;min-height:1180px}
+    .stacked-card-sticky{position:sticky;top:92px;height:430px}
+    .stacked-cards{position:relative;height:390px}
+
+    .ref-card{
+      position:absolute;
+      inset:0;
+      min-height:345px;
+      padding:28px;
+      border-radius:24px;
+    }
+
+    .ref-card h3{font-size:28px}
+    .ref-card p{font-size:16px}
+    .ref-card .ref-meta{font-size:11px}
+
+    .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
+    .ref-card:nth-child(2){z-index:3;transform:rotate(-5deg)}
+    .ref-card:nth-child(3){z-index:2;transform:rotate(-10deg)}
+    .ref-card:nth-child(4){z-index:1;transform:rotate(-15deg)}
+    .ref-card.is-gone{transform:translateY(-140px) rotate(8deg) !important;opacity:0;pointer-events:none}
   }
-
-  .grid,
-  .cards,
-  .case,
-  .about-grid,
-  .contact-grid,
-  .footer-grid,
-  .references-grid{
-    grid-template-columns:1fr
-  }
-
-  .hero{
-    min-height:auto
-  }
-
-  .visual{
-    display:flex
-  }
-
-  .hero-photo{
-    max-width:360px;
-    margin:0 auto
-  }
-
-  .cards{
-    gap:18px
-  }
-
-  .case{
-    padding:28px
-  }
-
-  .metrics{
-    flex-wrap:wrap
-  }
-
-  .usp{
-    grid-template-columns:1fr
-  }
-
-  .nav-inner{
-    height:72px
-  }
-
-  section{
-    padding:78px 0
-  }
-
-  .mobile-menu{
-    display:block;
-    font-size:13px;
-    text-transform:uppercase;
-    font-weight:800;
-    color:var(--primary)
-  }
-
-  .logo-brand img{
-    height:44px
-  }
-
-  /* REFERENTIES MOBILE FIX */
-
-  .stack-wrapper{
-    position:relative;
-    height:420px;
-    margin-top:40px;
-  }
-
-  .stack-card{
-    position:sticky;
-    top:90px;
-    width:100%;
-    min-height:220px;
-    padding:28px;
-    border-radius:24px;
-    margin-bottom:24px;
-    transform:none !important;
-  }
-
-  .stack-card:nth-child(1){
-    top:90px;
-  }
-
-  .stack-card:nth-child(2){
-    top:120px;
-  }
-
-  .stack-card:nth-child(3){
-    top:150px;
-  }
-
-  .stack-card:nth-child(4){
-    top:180px;
-  }
-
-}
-
-  @media(max-width:900px){
-
-  .nav-links{
-    display:none
-  }
-
-  .grid,
-  .cards,
-  .case,
-  .about-grid,
-  .contact-grid,
-  .footer-grid,
-  .references-grid{
-    grid-template-columns:1fr
-  }
-
-  .hero{
-    min-height:auto
-  }
-
-  .visual{
-    display:flex
-  }
-
-  .hero-photo{
-    max-width:360px;
-    margin:0 auto
-  }
-
-  .cards{
-    gap:18px
-  }
-
-  .case{
-    padding:28px
-  }
-
-  .metrics{
-    flex-wrap:wrap
-  }
-
-  .usp{
-    grid-template-columns:1fr
-  }
-
-  .nav-inner{
-    height:72px
-  }
-
-  section{
-    padding:78px 0
-  }
-
-  .mobile-menu{
-    display:block;
-    font-size:13px;
-    text-transform:uppercase;
-    font-weight:800;
-    color:var(--primary)
-  }
-
-  .logo-brand img{
-    height:44px
-  }
-
-  /* REFERENTIES MOBILE FIX */
-
-  .stack-wrapper{
-    position:relative;
-    height:420px;
-    margin-top:40px;
-  }
-
-  .stack-card{
-    position:sticky;
-    top:90px;
-    width:100%;
-    min-height:220px;
-    padding:28px;
-    border-radius:24px;
-    margin-bottom:24px;
-    transform:none !important;
-  }
-
-  .stack-card:nth-child(1){
-    top:90px;
-  }
-
-  .stack-card:nth-child(2){
-    top:120px;
-  }
-
-  .stack-card:nth-child(3){
-    top:150px;
-  }
-
-  .stack-card:nth-child(4){
-    top:180px;
-  }
-
-}
 </style>
 </head>
 
@@ -485,10 +312,7 @@
               <article class="ref-card">
                 <div>
                   <h3>Heldere communicatie</h3>
-                  <p>
-                    Duidelijkheid tussen IT, operatie, leverancier en management.
-                    Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.
-                  </p>
+                  <p>Duidelijkheid tussen IT, operatie, leverancier en management. Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.</p>
                 </div>
                 <div class="ref-meta">Stakeholder management</div>
               </article>
@@ -496,10 +320,7 @@
               <article class="ref-card">
                 <div>
                   <h3>Grip op voortgang</h3>
-                  <p>
-                    Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming.
-                    Daardoor blijft voor iedereen zichtbaar waar het project staat.
-                  </p>
+                  <p>Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p>
                 </div>
                 <div class="ref-meta">PMO & projectregie</div>
               </article>
@@ -507,10 +328,7 @@
               <article class="ref-card">
                 <div>
                   <h3>Brug tussen IT en operatie</h3>
-                  <p>
-                    Technische keuzes vertalen naar praktische impact op de werkvloer —
-                    en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.
-                  </p>
+                  <p>Technische keuzes vertalen naar praktische impact op de werkvloer — en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.</p>
                 </div>
                 <div class="ref-meta">IT & Supply Chain</div>
               </article>
@@ -518,10 +336,7 @@
               <article class="ref-card">
                 <div>
                   <h3>Resultaatgericht en hands-on</h3>
-                  <p>
-                    Niet alleen adviseren, maar ook realiseren.
-                    Van strategie naar uitvoering, met focus op resultaat en continuïteit.
-                  </p>
+                  <p>Niet alleen adviseren, maar ook realiseren. Van strategie naar uitvoering, met focus op resultaat en continuïteit.</p>
                 </div>
                 <div class="ref-meta">Executiekracht</div>
               </article>
@@ -635,9 +450,7 @@
       const response = await fetch(form.action, {
         method: "POST",
         body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
+        headers: {'Accept': 'application/json'}
       });
 
       if (response.ok) {
@@ -655,10 +468,16 @@
   const refCards = document.querySelectorAll(".ref-card");
 
   function updateStackedCards() {
-    if (!stackedArea || window.innerWidth <= 900) return;
+    if (!stackedArea) return;
 
     const rect = stackedArea.getBoundingClientRect();
-    const progress = Math.min(Math.max((-rect.top + 180) / 280, 0), refCards.length);
+    const triggerOffset = window.innerWidth <= 900 ? 110 : 180;
+    const speed = window.innerWidth <= 900 ? 230 : 280;
+
+    const progress = Math.min(
+      Math.max((-rect.top + triggerOffset) / speed, 0),
+      refCards.length
+    );
 
     refCards.forEach((card, index) => {
       if (progress > index + 0.7) {
