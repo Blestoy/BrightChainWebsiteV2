@@ -28,10 +28,9 @@
 
   .logo-brand{display:flex;align-items:center}
   .logo-brand img{height:56px;width:auto;display:block}
-
   .footer-logo img{height:52px;width:auto;display:block}
 
-  .nav-links{display:flex;gap:28px;align-items:center}
+  .nav-links{display:flex;gap:24px;align-items:center}
   .nav-links a{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(23,33,43,.72)}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:15px 24px;font-weight:700;border:1px solid transparent;transition:.2s}
@@ -53,31 +52,9 @@
   .signals{display:flex;gap:28px;flex-wrap:wrap;margin-top:58px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;font-weight:700;color:rgba(23,33,43,.76)}
   .check{color:var(--secondary);font-weight:900}
 
-  .visual{
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    position:relative;
-    background:transparent;
-    overflow:visible;
-  }
-
-  .hero-photo{
-    aspect-ratio:3/4;
-    max-width:430px;
-    width:100%;
-    overflow:hidden;
-    background:transparent;
-  }
-
-  .hero-photo img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    object-position:center top;
-    display:block;
-    animation:slideUpHero 1.1s ease-out both;
-  }
+  .visual{display:flex;align-items:center;justify-content:center;position:relative;background:transparent;overflow:visible}
+  .hero-photo{aspect-ratio:3/4;max-width:430px;width:100%;overflow:hidden;background:transparent}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;animation:slideUpHero 1.1s ease-out both}
 
   @keyframes slideUpHero{
     from{opacity:0;transform:translateY(80px)}
@@ -122,6 +99,45 @@
   .usp{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:38px}
   .usp div{border:1px solid rgba(255,255,255,.22);padding:16px;border-radius:16px;font-weight:700;font-size:14px}
 
+  .references{background:var(--bg);padding:120px 0;overflow:visible}
+  .references-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:80px;align-items:flex-start}
+  .references-copy{position:sticky;top:130px}
+  .references-copy .label{font-size:13px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;color:var(--primary);margin-bottom:14px}
+  .references-copy h2{font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,4.6vw,56px);line-height:1.1;margin:0 0 24px}
+  .references-copy p{color:var(--muted);font-size:18px;max-width:520px}
+  .references-points{display:grid;gap:12px;margin-top:28px}
+  .references-points div{font-weight:700;color:rgba(23,33,43,.78)}
+
+  .stacked-card-area{position:relative;min-height:1280px}
+  .stacked-card-sticky{position:sticky;top:130px;height:520px}
+  .stacked-cards{position:relative;height:430px}
+
+  .ref-card{
+    position:absolute;
+    inset:0;
+    min-height:380px;
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:28px;
+    padding:38px;
+    box-shadow:0 28px 70px rgba(15,76,129,.14);
+    transition:transform .35s ease, opacity .35s ease;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+  }
+
+  .ref-card h3{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 18px;color:var(--primary)}
+  .ref-card p{color:rgba(23,33,43,.76);font-size:17px;margin:0}
+  .ref-card .ref-meta{margin-top:34px;padding-top:22px;border-top:1px solid var(--border);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary)}
+
+  .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
+  .ref-card:nth-child(2){z-index:3;transform:rotate(-7deg)}
+  .ref-card:nth-child(3){z-index:2;transform:rotate(-14deg)}
+  .ref-card:nth-child(4){z-index:1;transform:rotate(-21deg)}
+
+  .ref-card.is-gone{transform:translateY(-150px) rotate(8deg) !important;opacity:0;pointer-events:none}
+
   .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}
   .contact-panel{background:var(--bg);border:1px solid var(--border);border-radius:24px;padding:38px}
   .contact-panel h3{font-family:'Playfair Display',Georgia,serif;font-size:30px;margin-top:0}
@@ -141,7 +157,7 @@
 
   @media(max-width:900px){
     .nav-links{display:none}
-    .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+    .grid,.cards,.case,.about-grid,.references-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
     .hero{min-height:auto}
     .visual{display:flex}
     .hero-photo{max-width:360px;margin:0 auto}
@@ -149,6 +165,11 @@
     .case{padding:28px}
     .metrics{flex-wrap:wrap}
     .usp{grid-template-columns:1fr}
+    .references-copy{position:relative;top:auto}
+    .stacked-card-area{min-height:auto}
+    .stacked-card-sticky{position:relative;top:auto;height:auto}
+    .stacked-cards{height:auto;display:grid;gap:18px}
+    .ref-card{position:relative;transform:none !important;opacity:1 !important}
     .nav-inner{height:72px}
     section{padding:78px 0}
     .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:var(--primary)}
@@ -168,6 +189,7 @@
         <a href="#diensten">Diensten</a>
         <a href="#resultaten">Ervaring</a>
         <a href="#over-mij">Over mij</a>
+        <a href="#referenties">Referenties</a>
         <a class="btn btn-primary" href="#contact">Contact</a>
       </nav>
 
@@ -258,6 +280,75 @@
       </div>
     </section>
 
+    <section id="referenties" class="references">
+      <div class="container references-grid">
+        <div class="references-copy">
+          <div class="label">Referenties</div>
+          <h2>Waar samenwerking concreet waarde oplevert.</h2>
+          <p>
+            Referenties draaien voor mij niet alleen om mooie woorden, maar om herkenbare kwaliteiten in projecten:
+            rust, structuur, duidelijke communicatie en het vermogen om IT, operatie en management met elkaar te verbinden.
+          </p>
+
+          <div class="references-points">
+            <div><span class="check">✓</span> Duidelijke regie in complexe projecten</div>
+            <div><span class="check">✓</span> Sterke verbinding tussen business en IT</div>
+            <div><span class="check">✓</span> Praktisch, resultaatgericht en hands-on</div>
+          </div>
+        </div>
+
+        <div class="stacked-card-area">
+          <div class="stacked-card-sticky">
+            <div class="stacked-cards">
+              <article class="ref-card">
+                <div>
+                  <h3>Heldere communicatie</h3>
+                  <p>
+                    Duidelijkheid tussen IT, operatie, leverancier en management.
+                    Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.
+                  </p>
+                </div>
+                <div class="ref-meta">Stakeholder management</div>
+              </article>
+
+              <article class="ref-card">
+                <div>
+                  <h3>Grip op voortgang</h3>
+                  <p>
+                    Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming.
+                    Daardoor blijft voor iedereen zichtbaar waar het project staat.
+                  </p>
+                </div>
+                <div class="ref-meta">PMO & projectregie</div>
+              </article>
+
+              <article class="ref-card">
+                <div>
+                  <h3>Brug tussen IT en operatie</h3>
+                  <p>
+                    Technische keuzes vertalen naar praktische impact op de werkvloer —
+                    en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.
+                  </p>
+                </div>
+                <div class="ref-meta">IT & Supply Chain</div>
+              </article>
+
+              <article class="ref-card">
+                <div>
+                  <h3>Resultaatgericht en hands-on</h3>
+                  <p>
+                    Niet alleen adviseren, maar ook realiseren.
+                    Van strategie naar uitvoering, met focus op resultaat en continuïteit.
+                  </p>
+                </div>
+                <div class="ref-meta">Executiekracht</div>
+              </article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="contact" class="section-card">
       <div class="container contact-grid">
         <div>
@@ -268,7 +359,6 @@
           </div>
 
           <p><strong>Direct contact</strong><br><a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a></p>
-
           <p><strong>Connect</strong><br><a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel →</a></p>
         </div>
 
@@ -328,6 +418,7 @@
             <li><a href="#diensten">Diensten</a></li>
             <li><a href="#resultaten">Ervaring</a></li>
             <li><a href="#over-mij">Over mij</a></li>
+            <li><a href="#referenties">Referenties</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </div>
@@ -377,6 +468,28 @@
       alert("Er is iets misgegaan. Probeer het later opnieuw.");
     }
   });
+
+  const stackedArea = document.querySelector(".stacked-card-area");
+  const refCards = document.querySelectorAll(".ref-card");
+
+  function updateStackedCards() {
+    if (!stackedArea || window.innerWidth <= 900) return;
+
+    const rect = stackedArea.getBoundingClientRect();
+    const progress = Math.min(Math.max((-rect.top + 180) / 280, 0), refCards.length);
+
+    refCards.forEach((card, index) => {
+      if (progress > index + 0.7) {
+        card.classList.add("is-gone");
+      } else {
+        card.classList.remove("is-gone");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateStackedCards);
+  window.addEventListener("resize", updateStackedCards);
+  updateStackedCards();
 </script>
 
 </body>
