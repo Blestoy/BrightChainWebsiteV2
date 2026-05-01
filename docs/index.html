@@ -224,7 +224,7 @@
           <p class="lead">Van strategie naar uitvoering. Ik help organisaties complexe IT- en logistieke projecten succesvol realiseren — <strong>zonder ruis.</strong></p>
 
           <div class="actions">
-            <a class="btn btn-primary" href="#contact">Plan een kennismaking →</a>
+            <a class="btn btn-primary" href="#contact" id="contact-scroll-btn">Plan een kennismaking →</a>
             <a class="btn btn-outline" href="#diensten">Bekijk mijn werkgebied</a>
           </div>
 
@@ -501,6 +501,24 @@
   window.addEventListener("scroll", updateStackedCards);
   window.addEventListener("resize", updateStackedCards);
   updateStackedCards();
+const contactScrollBtn = document.getElementById("contact-scroll-btn");
+
+if (contactScrollBtn) {
+  contactScrollBtn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    const contactSection = document.getElementById("contact");
+
+    if (contactSection) {
+      contactSection.scrollIntoView({
+        behavior: "auto",
+        block: "start"
+      });
+    }
+  });
+}
+
+  
 </script>
 
 </body>
