@@ -155,25 +155,208 @@
   .mobile-menu{display:none}
 
   @media(max-width:900px){
-    .nav-links{display:none}
-    .grid,.cards,.case,.about-grid,.references-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
-    .hero{min-height:auto}
-    .visual{display:flex}
-    .hero-photo{max-width:360px;margin:0 auto}
-    .cards{gap:18px}
-    .case{padding:28px}
-    .metrics{flex-wrap:wrap}
-    .usp{grid-template-columns:1fr}
-    .references-copy{position:relative;top:auto}
-    .stacked-card-area{min-height:auto}
-    .stacked-card-sticky{position:relative;top:auto;height:auto}
-    .stacked-cards{height:auto;display:grid;gap:18px}
-    .ref-card{position:relative;transform:none !important;opacity:1 !important}
-    .nav-inner{height:72px}
-    section{padding:78px 0}
-    .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:var(--primary)}
-    .logo-brand img{height:44px}
+
+  .nav-links{
+    display:none
   }
+
+  .grid,
+  .cards,
+  .case,
+  .about-grid,
+  .contact-grid,
+  .footer-grid,
+  .references-grid{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    min-height:auto
+  }
+
+  .visual{
+    display:flex
+  }
+
+  .hero-photo{
+    max-width:360px;
+    margin:0 auto
+  }
+
+  .cards{
+    gap:18px
+  }
+
+  .case{
+    padding:28px
+  }
+
+  .metrics{
+    flex-wrap:wrap
+  }
+
+  .usp{
+    grid-template-columns:1fr
+  }
+
+  .nav-inner{
+    height:72px
+  }
+
+  section{
+    padding:78px 0
+  }
+
+  .mobile-menu{
+    display:block;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--primary)
+  }
+
+  .logo-brand img{
+    height:44px
+  }
+
+  /* REFERENTIES MOBILE FIX */
+
+  .stack-wrapper{
+    position:relative;
+    height:420px;
+    margin-top:40px;
+  }
+
+  .stack-card{
+    position:sticky;
+    top:90px;
+    width:100%;
+    min-height:220px;
+    padding:28px;
+    border-radius:24px;
+    margin-bottom:24px;
+    transform:none !important;
+  }
+
+  .stack-card:nth-child(1){
+    top:90px;
+  }
+
+  .stack-card:nth-child(2){
+    top:120px;
+  }
+
+  .stack-card:nth-child(3){
+    top:150px;
+  }
+
+  .stack-card:nth-child(4){
+    top:180px;
+  }
+
+}
+
+  @media(max-width:900px){
+
+  .nav-links{
+    display:none
+  }
+
+  .grid,
+  .cards,
+  .case,
+  .about-grid,
+  .contact-grid,
+  .footer-grid,
+  .references-grid{
+    grid-template-columns:1fr
+  }
+
+  .hero{
+    min-height:auto
+  }
+
+  .visual{
+    display:flex
+  }
+
+  .hero-photo{
+    max-width:360px;
+    margin:0 auto
+  }
+
+  .cards{
+    gap:18px
+  }
+
+  .case{
+    padding:28px
+  }
+
+  .metrics{
+    flex-wrap:wrap
+  }
+
+  .usp{
+    grid-template-columns:1fr
+  }
+
+  .nav-inner{
+    height:72px
+  }
+
+  section{
+    padding:78px 0
+  }
+
+  .mobile-menu{
+    display:block;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:var(--primary)
+  }
+
+  .logo-brand img{
+    height:44px
+  }
+
+  /* REFERENTIES MOBILE FIX */
+
+  .stack-wrapper{
+    position:relative;
+    height:420px;
+    margin-top:40px;
+  }
+
+  .stack-card{
+    position:sticky;
+    top:90px;
+    width:100%;
+    min-height:220px;
+    padding:28px;
+    border-radius:24px;
+    margin-bottom:24px;
+    transform:none !important;
+  }
+
+  .stack-card:nth-child(1){
+    top:90px;
+  }
+
+  .stack-card:nth-child(2){
+    top:120px;
+  }
+
+  .stack-card:nth-child(3){
+    top:150px;
+  }
+
+  .stack-card:nth-child(4){
+    top:180px;
+  }
+
+}
 </style>
 </head>
 
