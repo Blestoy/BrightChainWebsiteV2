@@ -15,7 +15,7 @@
 <style>
   :root{--bg:#f8f6f1;--card:#fffdf8;--text:#17212b;--muted:#5e6a76;--primary:#0f4c81;--secondary:#3291c9;--accent:#e8d8bd;--border:rgba(23,33,43,.12)}
   *{box-sizing:border-box}
-  html{scroll-behavior:smooth}
+  html{scroll-behavior:auto}
   body{margin:0;font-family:'Plus Jakarta Sans',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
   a{color:inherit;text-decoration:none}
 
@@ -510,9 +510,12 @@ if (contactScrollBtn) {
     const contactSection = document.getElementById("contact");
 
     if (contactSection) {
-      contactSection.scrollIntoView({
-        behavior: "auto",
-        block: "start"
+      const navHeight = document.querySelector(".nav").offsetHeight;
+      const targetPosition = contactSection.offsetTop - navHeight;
+
+      window.scrollTo({
+        top: targetPosition,
+        behavior: "instant"
       });
     }
   });
