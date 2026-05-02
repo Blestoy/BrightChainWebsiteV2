@@ -820,6 +820,33 @@
     height:30px;
     display:block;
   }
+  /* =========================================
+   Desktop active nav link
+========================================= */
+.nav-links a{
+  position:relative;
+  transition:.25s ease;
+}
+
+.nav-links a:hover{
+  color:var(--primary);
+}
+
+/* actieve sectie */
+.nav-links a.active-section{
+  color:var(--primary);
+}
+
+.nav-links a.active-section::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-10px;
+  width:100%;
+  height:2px;
+  background:#8ec5ea;
+  border-radius:999px;
+}
 
   @media(max-width:900px){
 
@@ -1471,6 +1498,49 @@
       }
     });
   }
+
+  /* =========================================
+   Active desktop navigation section
+========================================= */
+
+if (window.innerWidth > 900) {
+
+  const sections = document.querySelectorAll("section[id]");
+  const navLinks = document.querySelectorAll(".nav-links a[href^='#']");
+
+  function updateActiveNav() {
+
+    let currentSection = "";
+
+    sections.forEach(section => {
+
+      const sectionTop = section.offsetTop - 140;
+      const sectionHeight = section.offsetHeight;
+
+      if (
+        window.scrollY >= sectionTop &&
+        window.scrollY < sectionTop + sectionHeight
+      ) {
+        currentSection = section.getAttribute("id");
+      }
+    });
+
+    navLinks.forEach(link => {
+
+      link.classList.remove("active-section");
+
+      const href = link.getAttribute("href").replace("#", "");
+
+      if (href === currentSection) {
+        link.classList.add("active-section");
+      }
+    });
+  }
+
+  window.addEventListener("scroll", updateActiveNav);
+
+  updateActiveNav();
+}
 </script>
 
 </body>
