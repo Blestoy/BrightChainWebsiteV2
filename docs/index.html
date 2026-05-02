@@ -197,57 +197,42 @@
 
 .whatsapp-float{
   position:fixed;
-  right:20px;
-  bottom:20px;
+  right:24px;
+  bottom:24px;
   z-index:999;
-  width:74px;
-  padding:10px 8px;
-  border-radius:22px;
+  width:58px;
+  height:58px;
+  border-radius:50%;
   background:#25D366;
   display:flex;
-  flex-direction:column;
   align-items:center;
   justify-content:center;
-  gap:6px;
-  box-shadow:0 10px 28px rgba(0,0,0,.20);
+  box-shadow:0 12px 32px rgba(0,0,0,.22);
   transition:.2s;
-  color:#fff;
-  text-align:center;
 }
 
 .whatsapp-float:hover{
   transform:translateY(-3px);
-  box-shadow:0 14px 34px rgba(0,0,0,.24);
-}
-
-.whatsapp-float span{
-  font-size:11px;
-  font-weight:700;
-  line-height:1.2;
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
 }
 
 .whatsapp-float img{
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   display:block;
 }
 
 @media(max-width:900px){
-
   .whatsapp-float{
-    width:68px;
-    right:14px;
-    bottom:14px;
-    padding:9px 6px;
-  }
-
-  .whatsapp-float span{
-    font-size:10px;
+    right:18px;
+    bottom:18px;
+    width:54px;
+    height:54px;
   }
 
   .whatsapp-float img{
-    width:28px;
-    height:28px;
+    width:30px;
+    height:30px;
   }
 }
 </style>
