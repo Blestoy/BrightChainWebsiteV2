@@ -182,52 +182,140 @@
   .whatsapp-float span{font-size:11px;font-weight:700;line-height:1.2}
   .whatsapp-float img{width:30px;height:30px;display:block}
 
-  @media(max-width:900px){
-    .nav-links{display:none}
-    .mobile-dropdown{display:block}
-    .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--primary);border:0;border-radius:12px;padding:11px 16px;cursor:pointer}
+  @keyframes logoScroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(calc(-50% - 22px))}
+}
 
-    .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid,.references-grid{grid-template-columns:1fr}
-    .hero{min-height:auto}
-    .visual{display:flex}
-    .hero-photo{max-width:360px;margin:0 auto}
-    .cards{gap:18px}
-    .case{padding:28px}
-    .metrics{flex-wrap:wrap}
-    .usp{grid-template-columns:1fr}
-    .nav-inner{height:72px}
-    section{padding:78px 0}
-    .logo-brand img{height:44px}
+@media(max-width:900px){
+  body{overflow-x:hidden}
 
-    .references{padding:78px 0 0}
-    .references-copy{position:relative;top:auto;margin-bottom:50px}
-    .stacked-card-area{position:relative;min-height:940px;max-width:100%}
-    .stacked-card-sticky{
-      position:sticky;
-      top:92px;
-      height:490px;
-    }
-    .stacked-cards{position:relative;height:330px;margin-bottom:44px;}
-    .ref-card{position:absolute;inset:0;min-height:290px;padding:22px;border-radius:20px}
-    .ref-card h3{font-size:24px}
-    .ref-card p{font-size:15px}
-    .ref-card .ref-meta{font-size:11px}
-    .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
-    .ref-card:nth-child(2){z-index:3;transform:rotate(-3deg)}
-    .ref-card:nth-child(3){z-index:2;transform:rotate(-6deg)}
-    .ref-card:nth-child(4){z-index:1;transform:rotate(-9deg)}
-    .ref-card.is-gone{transform:translateY(-110px) rotate(8deg) !important;opacity:0;pointer-events:none}
-
-    .references-logo-slider{padding-top:20px}
-    .references-logo-slider .logo-slider{border-radius:20px;padding:16px 0}
-    .references-logo-slider .slide-track{gap:28px;animation-duration:22s}
-    .references-logo-slider .logo-slide{width:118px;height:54px;padding:10px 14px}
-    .references-logo-slider .logo-slide img{max-height:32px}
-
-    .whatsapp-float{width:68px;right:14px;bottom:14px;padding:9px 6px}
-    .whatsapp-float span{font-size:10px}
-    .whatsapp-float img{width:28px;height:28px}
+  .nav-links{display:none}
+  .mobile-dropdown{display:block}
+  .mobile-menu{
+    display:block;
+    font-size:13px;
+    text-transform:uppercase;
+    font-weight:800;
+    color:#fff;
+    background:var(--primary);
+    border:0;
+    border-radius:12px;
+    padding:11px 16px;
+    cursor:pointer;
   }
+
+  .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid,.references-grid{
+    grid-template-columns:1fr;
+  }
+
+  .hero{min-height:auto}
+  .visual{display:flex}
+  .hero-photo{max-width:360px;margin:0 auto}
+  .cards{gap:18px}
+  .case{padding:28px}
+  .metrics{flex-wrap:wrap}
+  .usp{grid-template-columns:1fr}
+  .nav-inner{height:72px}
+  section{padding:78px 0}
+  .logo-brand img{height:44px}
+
+  .references{
+    padding:78px 0 40px;
+    overflow:hidden;
+  }
+
+  .references-copy{
+    position:relative;
+    top:auto;
+    margin-bottom:36px;
+  }
+
+  .stacked-card-area{
+    min-height:auto;
+    max-width:100%;
+    margin-left:0;
+  }
+
+  .stacked-card-sticky{
+    position:relative;
+    top:auto;
+    height:auto;
+  }
+
+  .stacked-cards{
+    position:relative;
+    height:auto;
+    margin-bottom:28px;
+    display:grid;
+    gap:18px;
+  }
+
+  .ref-card{
+    position:relative;
+    inset:auto;
+    min-height:auto;
+    max-width:100%;
+    width:100%;
+    padding:24px;
+    border-radius:22px;
+    transform:none !important;
+    opacity:1 !important;
+  }
+
+  .ref-card h3{font-size:26px}
+  .ref-card p{font-size:15px}
+  .ref-card .ref-meta{
+    font-size:11px;
+    margin-top:24px;
+    padding-top:16px;
+  }
+
+  .references-logo-slider{
+    background:transparent;
+    padding:0;
+    overflow:hidden;
+    width:100%;
+  }
+
+  .references-logo-slider .logo-slider{
+    width:100%;
+    max-width:100%;
+    overflow:hidden;
+    border-radius:18px;
+    padding:12px 0;
+  }
+
+  .references-logo-slider .slide-track{
+    gap:24px;
+    animation:logoScroll 20s linear infinite;
+  }
+
+  .references-logo-slider .logo-slide{
+    width:105px;
+    height:48px;
+    padding:8px 12px;
+  }
+
+  .references-logo-slider .logo-slide img{
+    max-height:28px;
+  }
+
+  .references-logo-slider .logo-slider:before,
+  .references-logo-slider .logo-slider:after{
+    width:42px;
+  }
+
+  .whatsapp-float{
+    width:68px;
+    right:14px;
+    bottom:14px;
+    padding:9px 6px;
+  }
+
+  .whatsapp-float span{font-size:10px}
+  .whatsapp-float img{width:28px;height:28px}
+}
 
   .logo-slider-section{
   background:var(--bg);
@@ -322,11 +410,6 @@
     transform:translateX(calc(-50% - 27px));
   }
 }
-
-@media(max-width:900px){
-  .logo-slider-section{
-    padding:10px 0 70px;
-  }
 
   .logo-slider{
     border-radius:22px;
