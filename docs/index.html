@@ -927,7 +927,10 @@
     /* --- References section --- */
     .references{
       padding:64px 0 0;
-      overflow-x:hidden;
+      /* overflow-x:clip clips visual overflow from rotated cards WITHOUT
+         creating a scroll container (unlike overflow-x:hidden), so
+         position:sticky on .stacked-card-sticky keeps working correctly */
+      overflow-x:clip;
     }
 
     .references-copy{
@@ -947,9 +950,11 @@
     --- */
     .stacked-card-area{
       position:relative;
-      /* Enough height for JS scroll animation to cycle through all 4 cards
-         but not so tall it creates a huge whitespace gap before Contact */
-      min-height:560px;
+      /* Needs to be tall enough for the sticky element to stay pinned while
+         the JS scroll animation cycles through all 4 cards.
+         Formula: sticky-bottom (100 + ~420) + needed-scroll (~760) ≈ 1280px.
+         900px gives a good partial animation (2-3 cards) without excessive whitespace. */
+      min-height:900px;
       max-width:100%;
       width:100%;
       margin-left:0;
@@ -965,11 +970,11 @@
       position:relative;
       height:340px;
       margin-bottom:52px;
-      /* overflow:hidden clips the corners of rotated child cards that would
-         otherwise extend beyond the container and cause horizontal page overflow
-         on narrow phone screens. The sticky parent is unaffected. */
-      overflow:hidden;
-      border-radius:22px;
+      /* No overflow:hidden here — that would clip the peeking rotated cards
+         behind the top card and kill the stacked-deck visual effect.
+         Horizontal overflow from rotated corners is handled by overflow-x:clip
+         on the parent .references section, which clips visually without
+         creating a scroll container (sticky stays intact). */
     }
 
     .ref-card{
@@ -991,9 +996,8 @@
       padding-top:14px;
     }
 
-    /* Reduced rotation angles on mobile: large angles push card corners
-       outside the viewport on narrow screens, causing horizontal scroll.
-       Small angles preserve the stacked-deck visual without overflowing. */
+    /* Small rotations on mobile so the stacked-deck peek is visible but
+       card corners don't overflow too far (clipped by overflow-x:clip on .references) */
     .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
     .ref-card:nth-child(2){z-index:3;transform:rotate(-2deg)}
     .ref-card:nth-child(3){z-index:2;transform:rotate(-4deg)}
