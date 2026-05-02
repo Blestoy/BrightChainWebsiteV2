@@ -194,9 +194,61 @@
     .ref-card:nth-child(4){z-index:1;transform:rotate(-15deg)}
     .ref-card.is-gone{transform:translateY(-140px) rotate(8deg) !important;opacity:0;pointer-events:none}
   }
+
+  .whatsapp-float{
+  position:fixed;
+  right:24px;
+  bottom:24px;
+  z-index:999;
+  width:58px;
+  height:58px;
+  border-radius:50%;
+  background:#25D366;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 12px 32px rgba(0,0,0,.22);
+  transition:.2s;
+}
+
+.whatsapp-float:hover{
+  transform:translateY(-3px);
+  box-shadow:0 16px 40px rgba(0,0,0,.28);
+}
+
+.whatsapp-float img{
+  width:32px;
+  height:32px;
+  display:block;
+}
+
+@media(max-width:900px){
+  .whatsapp-float{
+    right:18px;
+    bottom:18px;
+    width:54px;
+    height:54px;
+  }
+
+  .whatsapp-float img{
+    width:30px;
+    height:30px;
+  }
+}
 </style>
 </head>
-
+<a 
+  class="whatsapp-float" 
+  href="https://wa.me/31624255451?text=Hallo%20Rene%2C%20ik%20heb%20interesse%20in%20je%20diensten%20en%20wil%20graag%20kennismaken!"
+  target="_blank"
+  rel="noreferrer"
+  aria-label="WhatsApp René de Koning"
+>
+  <img 
+    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+    alt="WhatsApp"
+  >
+</a>
 <body>
   <header class="nav">
     <div class="container nav-inner">
