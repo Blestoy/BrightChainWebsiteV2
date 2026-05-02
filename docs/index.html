@@ -115,7 +115,11 @@
   .references-points div{font-weight:700;color:rgba(23,33,43,.78)}
 
   .stacked-card-area{position:relative;min-height:1280px}
-  .stacked-card-sticky{position:sticky;top:180px;height:520px}
+  .stacked-card-sticky{
+  position:sticky;
+  top:150px;
+  height:660px;
+}
   .stacked-cards{position:relative;height:430px}
 
   .ref-card{position:absolute;inset:0;min-height:380px;background:var(--card);border:1px solid var(--border);border-radius:28px;padding:38px;box-shadow:0 28px 70px rgba(15,76,129,.14);transition:transform .35s ease, opacity .35s ease;display:flex;flex-direction:column;justify-content:space-between}
@@ -168,7 +172,34 @@
     .references{padding:78px 0 0}
     .references-copy{position:relative;top:auto;margin-bottom:50px}
     .stacked-card-area{position:relative;min-height:1180px}
-    .stacked-card-sticky{position:sticky;top:125px;height:430px}
+    .stacked-card-sticky{
+  position:sticky;
+  top:105px;
+  height:560px;
+      .references-logo-slider{
+  padding-top:20px;
+}
+
+.references-logo-slider .logo-slider{
+  border-radius:20px;
+  padding:16px 0;
+}
+
+.references-logo-slider .slide-track{
+  gap:28px;
+  animation-duration:22s;
+}
+
+.references-logo-slider .logo-slide{
+  width:118px;
+  height:54px;
+  padding:10px 14px;
+}
+
+.references-logo-slider .logo-slide img{
+  max-height:32px;
+}
+}
     .stacked-cards{position:relative;height:390px}
     .ref-card{position:absolute;inset:0;min-height:345px;padding:28px;border-radius:24px}
     .ref-card h3{font-size:28px}
@@ -309,6 +340,75 @@
     width:64px;
   }
 }
+
+  .references-logo-slider{
+  background:transparent;
+  padding:28px 0 0;
+}
+
+.references-logo-slider .logo-slider{
+  border-radius:24px;
+  padding:20px 0;
+  background:rgba(255,253,248,.78);
+  border:1px solid var(--border);
+  box-shadow:0 20px 50px rgba(15,76,129,.08);
+}
+
+.references-logo-slider .slide-track{
+  display:flex;
+  align-items:center;
+  gap:44px;
+  width:max-content;
+  animation:logoScroll 26s linear infinite;
+  will-change:transform;
+}
+
+.references-logo-slider .logo-slider:hover .slide-track{
+  animation-play-state:paused;
+}
+
+.references-logo-slider .logo-slide{
+  flex:0 0 auto;
+  width:150px;
+  height:62px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:12px 18px;
+  border-radius:18px;
+  opacity:.72;
+  transition:.25s ease;
+}
+
+.references-logo-slider .logo-slide:hover{
+  opacity:1;
+  transform:scale(1.06);
+  background:rgba(50,145,201,.08);
+}
+
+.references-logo-slider .logo-slide img{
+  max-width:100%;
+  max-height:40px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  filter:grayscale(100%);
+  transition:.25s ease;
+}
+
+.references-logo-slider .logo-slide:hover img{
+  filter:grayscale(0%);
+}
+
+@keyframes logoScroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(calc(-50% - 22px));
+  }
+}
 </style>
 </head>
 
@@ -446,62 +546,60 @@
               <article class="ref-card"><div><h3>Grip op voortgang</h3><p>Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p></div><div class="ref-meta">PMO & projectregie</div></article>
               <article class="ref-card"><div><h3>Brug tussen IT en operatie</h3><p>Technische keuzes vertalen naar praktische impact op de werkvloer — en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.</p></div><div class="ref-meta">IT & Supply Chain</div></article>
               <article class="ref-card"><div><h3>Resultaatgericht en hands-on</h3><p>Niet alleen adviseren, maar ook realiseren. Van strategie naar uitvoering, met focus op resultaat en continuïteit.</p></div><div class="ref-meta">Executiekracht</div></article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+           </div>
 
-<div class="logo-slider-section">
-  <div class="container">
-    <div class="logo-slider">
-      <div class="slide-track">
+<div class="logo-slider-section references-logo-slider">
+  <div class="logo-slider">
+    <div class="slide-track">
 
-        <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
-        </a>
+      <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
+      </a>
 
-        <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
-        </a>
+      <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
+      </a>
 
-        <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
-        </a>
+      <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
+      </a>
 
-        <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
-        </a>
+      <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
+      </a>
 
-        <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./GXO-logo.png" alt="GXO" loading="lazy">
-        </a>
+      <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./GXO-logo.png" alt="GXO" loading="lazy">
+      </a>
 
-        <!-- Duplicated for seamless loop -->
-        <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
-        </a>
+      <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
+      </a>
 
-        <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
-        </a>
+      <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
+      </a>
 
-        <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
-        </a>
+      <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
+      </a>
 
-        <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
-        </a>
+      <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
+      </a>
 
-        <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
-          <img src="./GXO-logo.png" alt="GXO" loading="lazy">
-        </a>
+      <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
+        <img src="./GXO-logo.png" alt="GXO" loading="lazy">
+      </a>
 
-      </div>
     </div>
   </div>
 </div>
+
+</div>
+</div>
+</div>
+</section>
     
     <section id="contact" class="section-card">
       <div class="container contact-grid">
