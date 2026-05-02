@@ -821,14 +821,8 @@
     display:block;
   }
 
-  /* =============================================
-     MOBILE — max-width: 900px
-     Only mobile-specific overrides below.
-     Desktop styles above are untouched.
-  ============================================= */
   @media(max-width:900px){
 
-    /* --- Nav --- */
     .nav-links{display:none}
     .mobile-dropdown{display:block}
 
@@ -848,7 +842,6 @@
     .nav-inner{height:72px}
     .logo-brand img{height:44px}
 
-    /* --- Layout grids: single column --- */
     .grid,
     .cards,
     .case,
@@ -859,15 +852,12 @@
       grid-template-columns:1fr;
     }
 
-    /* --- Section padding --- */
     section{padding:64px 0}
 
-    /* --- Container: tighter on mobile --- */
     .container{
       width:calc(100% - 32px);
     }
 
-    /* --- Hero --- */
     .hero{
       min-height:auto;
       padding-top:100px;
@@ -887,19 +877,16 @@
       font-size:13px;
     }
 
-    /* --- Section title --- */
     .section-title{
       margin-bottom:40px;
     }
 
     .section-title p{font-size:16px}
 
-    /* --- Cards (diensten) --- */
     .cards{gap:16px}
 
     .card{padding:26px}
 
-    /* --- Cases (ervaring) --- */
     .case{
       padding:24px;
       gap:20px;
@@ -916,7 +903,6 @@
 
     .case p{font-size:15px}
 
-    /* --- About --- */
     .usp{grid-template-columns:1fr}
 
     .portrait{
@@ -924,57 +910,40 @@
       margin:0 auto;
     }
 
-    /* --- References section --- */
     .references{
       padding:64px 0 0;
-      /* overflow-x:clip clips visual overflow from rotated cards WITHOUT
-         creating a scroll container (unlike overflow-x:hidden), so
-         position:sticky on .stacked-card-sticky keeps working correctly */
       overflow-x:clip;
     }
 
     .references-copy{
       position:relative;
       top:auto;
-      margin-bottom:40px;
+      margin-bottom:42px;
     }
 
-    /* --- Stacked card area ---
-         We need:
-         1. Enough min-height for scroll animation to complete across all 4 cards
-         2. height:auto on sticky so the logo slider is NOT clipped
-         3. min-height:0 on ref-card so inset:0 + container height controls sizing exactly
-         4. position:relative + z-index on logo slider so it always paints ABOVE the
-            positioned .stacked-cards element (which would otherwise paint on top of it
-            in the same stacking context)
-    --- */
     .stacked-card-area{
       position:relative;
-      /* Needs to be tall enough for the sticky element to stay pinned while
-         the JS scroll animation cycles through all 4 cards.
-         Formula: sticky-bottom (100 + ~420) + needed-scroll (~760) ≈ 1280px.
-         900px gives a good partial animation (2-3 cards) without excessive whitespace. */
       min-height:900px;
-      max-width:100%;
-      width:100%;
-      margin-left:0;
+      max-width:360px;
+      width:calc(100% - 34px);
+      margin:0 auto;
     }
 
     .stacked-card-sticky{
       position:sticky;
       top:100px;
       height:auto;
+      max-width:360px;
+      width:100%;
+      margin:0 auto;
     }
 
     .stacked-cards{
       position:relative;
       height:340px;
-      margin-bottom:52px;
-      /* No overflow:hidden here — that would clip the peeking rotated cards
-         behind the top card and kill the stacked-deck visual effect.
-         Horizontal overflow from rotated corners is handled by overflow-x:clip
-         on the parent .references section, which clips visually without
-         creating a scroll container (sticky stays intact). */
+      width:100%;
+      max-width:360px;
+      margin:0 auto 58px;
     }
 
     .ref-card{
@@ -996,12 +965,10 @@
       padding-top:14px;
     }
 
-    /* Small rotations on mobile so the stacked-deck peek is visible but
-       card corners don't overflow too far (clipped by overflow-x:clip on .references) */
     .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
-    .ref-card:nth-child(2){z-index:3;transform:rotate(-2deg)}
-    .ref-card:nth-child(3){z-index:2;transform:rotate(-4deg)}
-    .ref-card:nth-child(4){z-index:1;transform:rotate(-6deg)}
+    .ref-card:nth-child(2){z-index:3;transform:rotate(-1.8deg)}
+    .ref-card:nth-child(3){z-index:2;transform:rotate(-3.6deg)}
+    .ref-card:nth-child(4){z-index:1;transform:rotate(-5.4deg)}
 
     .ref-card.is-gone{
       transform:translateY(-130px) rotate(6deg) !important;
@@ -1009,14 +976,14 @@
       pointer-events:none;
     }
 
-    /* Logo slider: must be position:relative + z-index > 0 so it paints
-       in the "positioned" stacking layer, which is above the non-positioned
-       .stacked-cards element that would otherwise occlude it */
     .references-logo-slider{
       position:relative;
       z-index:6;
       padding:0;
-      margin-top:0;
+      margin:0 auto;
+      max-width:360px;
+      width:100%;
+      overflow:hidden;
     }
 
     .references-logo-slider .logo-slider{
@@ -1028,12 +995,12 @@
     }
 
     .references-logo-slider .slide-track{
-      gap:24px;
+      gap:22px;
       animation-duration:20s;
     }
 
     .references-logo-slider .logo-slide{
-      width:105px;
+      width:102px;
       height:48px;
       padding:8px 12px;
     }
@@ -1044,19 +1011,15 @@
 
     .references-logo-slider .logo-slider:before,
     .references-logo-slider .logo-slider:after{
-      width:42px;
+      width:36px;
     }
 
-    /* --- Contact section --- */
     #contact{
-      /* Prevent excessive whitespace that can accumulate after the
-         stacked-card scroll animation area ends */
       padding-top:52px;
     }
 
     .contact-panel{padding:24px}
 
-    /* --- Footer --- */
     .footer{padding:52px 0 28px}
 
     .bottom{
@@ -1064,7 +1027,6 @@
       gap:8px;
     }
 
-    /* --- WhatsApp float --- */
     .whatsapp-float{
       width:68px;
       right:14px;
@@ -1076,10 +1038,6 @@
     .whatsapp-float img{width:28px;height:28px}
   }
 
-  /* =============================================
-     SMALL PHONES — max-width: 480px
-     Additional tweaks for very small screens only.
-  ============================================= */
   @media(max-width:480px){
 
     .container{
@@ -1117,11 +1075,42 @@
     .case h3{font-size:21px}
     .metric strong{font-size:24px}
 
-    .stacked-cards{height:310px}
+    .stacked-card-area{
+      max-width:340px;
+      width:calc(100% - 28px);
+    }
+
+    .stacked-card-sticky{
+      max-width:340px;
+    }
+
+    .stacked-cards{
+      max-width:340px;
+      height:310px;
+      margin-bottom:54px;
+    }
 
     .ref-card{padding:20px}
     .ref-card h3{font-size:20px}
     .ref-card p{font-size:14px}
+
+    .references-logo-slider{
+      max-width:340px;
+    }
+
+    .references-logo-slider .logo-slide{
+      width:96px;
+      height:46px;
+      padding:8px 10px;
+    }
+
+    .references-logo-slider .slide-track{
+      gap:20px;
+    }
+
+    .references-logo-slider .logo-slide img{
+      max-height:26px;
+    }
 
     .about h2{font-size:clamp(28px,8vw,40px)}
     .about p{font-size:16px}
