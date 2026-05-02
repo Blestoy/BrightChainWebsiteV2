@@ -3,9 +3,12 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>BrightChain | Project Management & Operations</title>
+
   <link rel="icon" type="image/png" href="./logo-no-bg.png">
   <link rel="apple-touch-icon" href="./logo-no-bg.png">
+
   <meta name="description" content="BrightChain helpt organisaties met IT Project Management, PMO, M365 migraties, cloud transformaties, WMS implementaties en supply chain operations." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,15 +23,23 @@
   a{color:inherit;text-decoration:none}
 
   .container{width:min(1180px,calc(100% - 40px));margin:0 auto}
-  .nav{position:fixed;top:0;left:0;right:0;z-index:20;background:rgba(248,246,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+
+  .nav{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(248,246,241,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
   .nav-inner{height:82px;display:flex;align-items:center;justify-content:space-between}
   .brand{font-weight:800;letter-spacing:.06em;color:var(--primary);font-size:22px}
   .brand span{color:var(--secondary)}
   .logo-brand{display:flex;align-items:center}
   .logo-brand img{height:56px;width:auto;display:block}
   .footer-logo img{height:52px;width:auto;display:block}
+
   .nav-links{display:flex;gap:24px;align-items:center}
   .nav-links a{font-size:13px;text-transform:uppercase;letter-spacing:.12em;font-weight:700;color:rgba(23,33,43,.72)}
+
+  .mobile-dropdown{display:none;position:relative}
+  .mobile-dropdown-content{display:none;position:absolute;right:0;top:48px;min-width:210px;background:var(--card);border:1px solid var(--border);border-radius:18px;box-shadow:0 18px 45px rgba(15,76,129,.18);overflow:hidden;z-index:9999}
+  .mobile-dropdown-content a{display:block;padding:14px 18px;font-size:12px;text-transform:uppercase;letter-spacing:.12em;font-weight:800;color:var(--text);border-bottom:1px solid var(--border)}
+  .mobile-dropdown-content a:last-child{border-bottom:0}
+  .mobile-dropdown.open .mobile-dropdown-content{display:block}
 
   .btn{display:inline-flex;align-items:center;justify-content:center;border-radius:14px;padding:15px 24px;font-weight:700;border:1px solid transparent;transition:.2s}
   .btn-primary{background:var(--primary);color:#fff}
@@ -39,8 +50,10 @@
 
   .hero{min-height:100vh;display:flex;align-items:center;padding:130px 0 70px;position:relative;overflow:hidden}
   .grid{display:grid;grid-template-columns:1.25fr .75fr;gap:64px;align-items:center;position:relative}
+
   h1{font-family:'Playfair Display',Georgia,serif;font-size:clamp(44px,6vw,78px);line-height:1.05;margin:0 0 26px;letter-spacing:-.035em}
   h1 em,.italic{font-style:italic;color:var(--primary)}
+
   .lead{font-size:clamp(18px,2vw,22px);color:rgba(23,33,43,.72);max-width:720px;margin:0 0 34px;font-weight:300}
   .actions{display:flex;gap:14px;flex-wrap:wrap}
   .signals{display:flex;gap:28px;flex-wrap:wrap;margin-top:58px;padding-top:28px;border-top:1px solid var(--border);font-size:14px;font-weight:700;color:rgba(23,33,43,.76)}
@@ -102,32 +115,13 @@
   .references-points div{font-weight:700;color:rgba(23,33,43,.78)}
 
   .stacked-card-area{position:relative;min-height:1280px}
-  .stacked-card-sticky{
-  position:sticky;
-  top:180px;
-  height:520px;
-}
+  .stacked-card-sticky{position:sticky;top:180px;height:520px}
   .stacked-cards{position:relative;height:430px}
 
-  .ref-card{
-    position:absolute;
-    inset:0;
-    min-height:380px;
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:28px;
-    padding:38px;
-    box-shadow:0 28px 70px rgba(15,76,129,.14);
-    transition:transform .35s ease, opacity .35s ease;
-    display:flex;
-    flex-direction:column;
-    justify-content:space-between;
-  }
-
+  .ref-card{position:absolute;inset:0;min-height:380px;background:var(--card);border:1px solid var(--border);border-radius:28px;padding:38px;box-shadow:0 28px 70px rgba(15,76,129,.14);transition:transform .35s ease, opacity .35s ease;display:flex;flex-direction:column;justify-content:space-between}
   .ref-card h3{font-family:'Playfair Display',Georgia,serif;font-size:32px;line-height:1.15;margin:0 0 18px;color:var(--primary)}
   .ref-card p{color:rgba(23,33,43,.76);font-size:17px;margin:0}
   .ref-card .ref-meta{margin-top:34px;padding-top:22px;border-top:1px solid var(--border);font-size:13px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--secondary)}
-
   .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
   .ref-card:nth-child(2){z-index:3;transform:rotate(-7deg)}
   .ref-card:nth-child(3){z-index:2;transform:rotate(-14deg)}
@@ -149,10 +143,16 @@
   .footer h4{text-transform:uppercase;letter-spacing:.14em;font-size:12px;color:rgba(255,255,255,.42)}
   .bottom{border-top:1px solid rgba(255,255,255,.12);margin-top:50px;padding-top:22px;display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap;color:rgba(255,255,255,.42);font-size:12px}
 
-  .mobile-menu{display:none}
+  .whatsapp-float{position:fixed;right:20px;bottom:20px;z-index:999;width:74px;padding:10px 8px;border-radius:22px;background:#25D366;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;box-shadow:0 10px 28px rgba(0,0,0,.20);transition:.2s;color:#fff;text-align:center}
+  .whatsapp-float:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(0,0,0,.24)}
+  .whatsapp-float span{font-size:11px;font-weight:700;line-height:1.2}
+  .whatsapp-float img{width:30px;height:30px;display:block}
 
   @media(max-width:900px){
     .nav-links{display:none}
+    .mobile-dropdown{display:block}
+    .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:#fff;background:var(--primary);border:0;border-radius:12px;padding:11px 16px;cursor:pointer}
+
     .grid,.cards,.case,.about-grid,.contact-grid,.footer-grid,.references-grid{grid-template-columns:1fr}
     .hero{min-height:auto}
     .visual{display:flex}
@@ -163,145 +163,32 @@
     .usp{grid-template-columns:1fr}
     .nav-inner{height:72px}
     section{padding:78px 0}
-    .mobile-dropdown{
-  display:block;
-}
-
-.mobile-menu{
-  display:block;
-  font-size:13px;
-  text-transform:uppercase;
-  font-weight:800;
-  color:#fff;
-  background:var(--primary);
-  border:0;
-  border-radius:12px;
-  padding:11px 16px;
-  cursor:pointer;
-}
     .logo-brand img{height:44px}
 
     .references{padding:78px 0 0}
     .references-copy{position:relative;top:auto;margin-bottom:50px}
     .stacked-card-area{position:relative;min-height:1180px}
-    .stacked-card-sticky{
-  position:sticky;
-  top:125px;
-  height:430px;
-}
+    .stacked-card-sticky{position:sticky;top:125px;height:430px}
     .stacked-cards{position:relative;height:390px}
-
-    .ref-card{
-      position:absolute;
-      inset:0;
-      min-height:345px;
-      padding:28px;
-      border-radius:24px;
-    }
-
+    .ref-card{position:absolute;inset:0;min-height:345px;padding:28px;border-radius:24px}
     .ref-card h3{font-size:28px}
     .ref-card p{font-size:16px}
     .ref-card .ref-meta{font-size:11px}
-
     .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
     .ref-card:nth-child(2){z-index:3;transform:rotate(-5deg)}
     .ref-card:nth-child(3){z-index:2;transform:rotate(-10deg)}
     .ref-card:nth-child(4){z-index:1;transform:rotate(-15deg)}
     .ref-card.is-gone{transform:translateY(-140px) rotate(8deg) !important;opacity:0;pointer-events:none}
+
+    .whatsapp-float{width:68px;right:14px;bottom:14px;padding:9px 6px}
+    .whatsapp-float span{font-size:10px}
+    .whatsapp-float img{width:28px;height:28px}
   }
-
-.whatsapp-float{
-  position:fixed;
-  right:24px;
-  bottom:24px;
-  z-index:999;
-  width:58px;
-  height:58px;
-  border-radius:50%;
-  background:#25D366;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 12px 32px rgba(0,0,0,.22);
-  transition:.2s;
-}
-
-.whatsapp-float:hover{
-  transform:translateY(-3px);
-  box-shadow:0 16px 40px rgba(0,0,0,.28);
-}
-
-.whatsapp-float img{
-  width:32px;
-  height:32px;
-  display:block;
-}
-
-@media(max-width:900px){
-  .whatsapp-float{
-    right:18px;
-    bottom:18px;
-    width:54px;
-    height:54px;
-  }
-
-  .whatsapp-float img{
-    width:30px;
-    height:30px;
-  }
-}
-
-  .mobile-dropdown{
-  display:none;
-  position:relative;
-}
-
-.mobile-dropdown-content{
-  display:none;
-  position:absolute;
-  right:0;
-  top:42px;
-  min-width:190px;
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:18px;
-  box-shadow:0 18px 45px rgba(15,76,129,.18);
-  overflow:hidden;
-}
-
-.mobile-dropdown-content a{
-  display:block;
-  padding:14px 18px;
-  font-size:12px;
-  text-transform:uppercase;
-  letter-spacing:.12em;
-  font-weight:800;
-  color:var(--text);
-  border-bottom:1px solid var(--border);
-}
-
-.mobile-dropdown-content a:last-child{
-  border-bottom:0;
-}
-
-.mobile-dropdown.open .mobile-dropdown-content{
-  display:block;
-}
 </style>
 </head>
-<a 
-  class="whatsapp-float" 
-  href="https://wa.me/31624255451?text=Hallo%20Ren%C3%A9%2C%20ik%20ben%20benieuwd%20wat%20BrightChain%20voor%20onze%20organisatie%20kan%20betekenen."
-  target="_blank"
-  rel="noreferrer"
-  aria-label="WhatsApp René de Koning"
->
-  <img 
-    src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
-    alt="WhatsApp"
-  >
-</a>
+
 <body>
+
   <header class="nav">
     <div class="container nav-inner">
       <a href="#top" class="brand logo-brand">
@@ -317,18 +204,16 @@
       </nav>
 
       <div class="mobile-dropdown">
-  <button class="mobile-menu" type="button" id="mobile-menu-button">
-    Menu
-  </button>
+        <button class="mobile-menu" type="button" id="mobile-menu-button">Menu</button>
 
-  <div class="mobile-dropdown-content" id="mobile-dropdown-content">
-    <a href="#diensten">Diensten</a>
-    <a href="#resultaten">Ervaring</a>
-    <a href="#over-mij">Over mij</a>
-    <a href="#referenties">Referenties</a>
-    <a href="#contact">Contact</a>
-  </div>
-</div>
+        <div class="mobile-dropdown-content" id="mobile-dropdown-content">
+          <a href="#diensten">Diensten</a>
+          <a href="#resultaten">Ervaring</a>
+          <a href="#over-mij">Over mij</a>
+          <a href="#referenties">Referenties</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </div>
   </header>
 
@@ -420,10 +305,7 @@
         <div class="references-copy">
           <div class="label">Referenties</div>
           <h2>Waar samenwerking concreet waarde oplevert.</h2>
-          <p>
-            Referenties draaien voor mij niet alleen om mooie woorden, maar om herkenbare kwaliteiten in projecten:
-            rust, structuur, duidelijke communicatie en het vermogen om IT, operatie en management met elkaar te verbinden.
-          </p>
+          <p>Referenties draaien voor mij niet alleen om mooie woorden, maar om herkenbare kwaliteiten in projecten: rust, structuur, duidelijke communicatie en het vermogen om IT, operatie en management met elkaar te verbinden.</p>
 
           <div class="references-points">
             <div><span class="check">✓</span> Duidelijke regie in complexe projecten</div>
@@ -435,37 +317,10 @@
         <div class="stacked-card-area">
           <div class="stacked-card-sticky">
             <div class="stacked-cards">
-              <article class="ref-card">
-                <div>
-                  <h3>Heldere communicatie</h3>
-                  <p>Duidelijkheid tussen IT, operatie, leverancier en management. Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.</p>
-                </div>
-                <div class="ref-meta">Stakeholder management</div>
-              </article>
-
-              <article class="ref-card">
-                <div>
-                  <h3>Grip op voortgang</h3>
-                  <p>Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p>
-                </div>
-                <div class="ref-meta">PMO & projectregie</div>
-              </article>
-
-              <article class="ref-card">
-                <div>
-                  <h3>Brug tussen IT en operatie</h3>
-                  <p>Technische keuzes vertalen naar praktische impact op de werkvloer — en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.</p>
-                </div>
-                <div class="ref-meta">IT & Supply Chain</div>
-              </article>
-
-              <article class="ref-card">
-                <div>
-                  <h3>Resultaatgericht en hands-on</h3>
-                  <p>Niet alleen adviseren, maar ook realiseren. Van strategie naar uitvoering, met focus op resultaat en continuïteit.</p>
-                </div>
-                <div class="ref-meta">Executiekracht</div>
-              </article>
+              <article class="ref-card"><div><h3>Heldere communicatie</h3><p>Duidelijkheid tussen IT, operatie, leverancier en management. Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.</p></div><div class="ref-meta">Stakeholder management</div></article>
+              <article class="ref-card"><div><h3>Grip op voortgang</h3><p>Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p></div><div class="ref-meta">PMO & projectregie</div></article>
+              <article class="ref-card"><div><h3>Brug tussen IT en operatie</h3><p>Technische keuzes vertalen naar praktische impact op de werkvloer — en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.</p></div><div class="ref-meta">IT & Supply Chain</div></article>
+              <article class="ref-card"><div><h3>Resultaatgericht en hands-on</h3><p>Niet alleen adviseren, maar ook realiseren. Van strategie naar uitvoering, met focus op resultaat en continuïteit.</p></div><div class="ref-meta">Executiekracht</div></article>
             </div>
           </div>
         </div>
@@ -489,29 +344,12 @@
           <h3>Plan een kennismaking</h3>
 
           <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
-            <div class="form-row">
-              <label>Naam</label>
-              <input type="text" name="naam" required placeholder="Uw volledige naam">
-            </div>
-
-            <div class="form-row">
-              <label>E-mail</label>
-              <input type="email" name="email" required placeholder="uw@email.nl">
-            </div>
-
-            <div class="form-row">
-              <label>Telefoonnummer</label>
-              <input type="tel" name="telefoon" placeholder="Optioneel">
-            </div>
-
-            <div class="form-row">
-              <label>Bericht</label>
-              <textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea>
-            </div>
-
+            <div class="form-row"><label>Naam</label><input type="text" name="naam" required placeholder="Uw volledige naam"></div>
+            <div class="form-row"><label>E-mail</label><input type="email" name="email" required placeholder="uw@email.nl"></div>
+            <div class="form-row"><label>Telefoonnummer</label><input type="tel" name="telefoon" placeholder="Optioneel"></div>
+            <div class="form-row"><label>Bericht</label><textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea></div>
             <input type="hidden" name="_captcha" value="false">
             <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
-
             <button class="btn btn-primary" style="width:100%" type="submit">Verstuur bericht</button>
           </form>
         </div>
@@ -528,11 +366,7 @@
           </div>
 
           <p>Freelance IT Project Manager gespecialiseerd in M365 migraties, cloud transformaties en supply chain optimalisatie. Resultaatgericht en hands-on.</p>
-
-          <p>
-            <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a><br>
-            <a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel</a>
-          </p>
+          <p><a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a><br><a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel</a></p>
         </div>
 
         <div>
@@ -563,6 +397,17 @@
       </div>
     </div>
   </footer>
+
+  <a 
+    class="whatsapp-float" 
+    href="https://wa.me/31624255451?text=Hallo%20Ren%C3%A9%2C%20ik%20ben%20benieuwd%20wat%20BrightChain%20voor%20onze%20organisatie%20kan%20betekenen."
+    target="_blank"
+    rel="noreferrer"
+    aria-label="WhatsApp René de Koning"
+  >
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    <span>Even sparren?</span>
+  </a>
 
 <script>
   const form = document.getElementById("contact-form");
@@ -617,40 +462,47 @@
   window.addEventListener("scroll", updateStackedCards);
   window.addEventListener("resize", updateStackedCards);
   updateStackedCards();
-const contactScrollBtn = document.getElementById("contact-scroll-btn");
 
-if (contactScrollBtn) {
-  contactScrollBtn.addEventListener("click", function(e) {
-    e.preventDefault();
+  const contactScrollBtn = document.getElementById("contact-scroll-btn");
 
-    const contactSection = document.getElementById("contact");
+  if (contactScrollBtn) {
+    contactScrollBtn.addEventListener("click", function(e) {
+      e.preventDefault();
 
-    if (contactSection) {
-      const navHeight = document.querySelector(".nav").offsetHeight;
-      const targetPosition = contactSection.offsetTop - navHeight;
+      const contactSection = document.getElementById("contact");
 
-      window.scrollTo({
-        top: targetPosition,
-        behavior: "instant"
-      });
-    }
-  });
-}
+      if (contactSection) {
+        const navHeight = document.querySelector(".nav").offsetHeight;
+        const targetPosition = contactSection.offsetTop - navHeight;
 
- const mobileDropdown = document.querySelector(".mobile-dropdown");
-const mobileMenuButton = document.getElementById("mobile-menu-button");
-
-if (mobileDropdown && mobileMenuButton) {
-  mobileMenuButton.addEventListener("click", function() {
-    mobileDropdown.classList.toggle("open");
-  });
-
-  mobileDropdown.querySelectorAll("a").forEach(function(link) {
-    link.addEventListener("click", function() {
-      mobileDropdown.classList.remove("open");
+        window.scrollTo({
+          top: targetPosition,
+          behavior: "auto"
+        });
+      }
     });
-  });
-} 
+  }
+
+  const mobileDropdown = document.querySelector(".mobile-dropdown");
+  const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+  if (mobileDropdown && mobileMenuButton) {
+    mobileMenuButton.addEventListener("click", function() {
+      mobileDropdown.classList.toggle("open");
+    });
+
+    mobileDropdown.querySelectorAll("a").forEach(function(link) {
+      link.addEventListener("click", function() {
+        mobileDropdown.classList.remove("open");
+      });
+    });
+
+    document.addEventListener("click", function(e) {
+      if (!mobileDropdown.contains(e.target)) {
+        mobileDropdown.classList.remove("open");
+      }
+    });
+  }
 </script>
 
 </body>
