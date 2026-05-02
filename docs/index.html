@@ -184,6 +184,131 @@
     .whatsapp-float span{font-size:10px}
     .whatsapp-float img{width:28px;height:28px}
   }
+
+  .logo-slider-section{
+  background:var(--bg);
+  padding:20px 0 95px;
+  overflow:hidden;
+}
+
+.logo-slider{
+  position:relative;
+  width:100%;
+  overflow:hidden;
+  border:1px solid var(--border);
+  border-radius:28px;
+  background:rgba(255,253,248,.72);
+  box-shadow:0 24px 60px rgba(15,76,129,.08);
+  padding:28px 0;
+}
+
+.logo-slider:before,
+.logo-slider:after{
+  content:"";
+  position:absolute;
+  top:0;
+  width:120px;
+  height:100%;
+  z-index:2;
+  pointer-events:none;
+}
+
+.logo-slider:before{
+  left:0;
+  background:linear-gradient(to right,var(--card),rgba(255,253,248,0));
+}
+
+.logo-slider:after{
+  right:0;
+  background:linear-gradient(to left,var(--card),rgba(255,253,248,0));
+}
+
+.slide-track{
+  display:flex;
+  align-items:center;
+  gap:54px;
+  width:max-content;
+  animation:logoScroll 28s linear infinite;
+  will-change:transform;
+}
+
+.logo-slider:hover .slide-track{
+  animation-play-state:paused;
+}
+
+.logo-slide{
+  flex:0 0 auto;
+  width:180px;
+  height:84px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px 24px;
+  border-radius:20px;
+  transition:.25s ease;
+  opacity:.72;
+}
+
+.logo-slide:hover{
+  opacity:1;
+  transform:scale(1.06);
+  background:rgba(50,145,201,.08);
+}
+
+.logo-slide img{
+  max-width:100%;
+  max-height:52px;
+  width:auto;
+  height:auto;
+  object-fit:contain;
+  display:block;
+  filter:grayscale(100%);
+  transition:.25s ease;
+}
+
+.logo-slide:hover img{
+  filter:grayscale(0%);
+}
+
+@keyframes logoScroll{
+  from{
+    transform:translateX(0);
+  }
+  to{
+    transform:translateX(calc(-50% - 27px));
+  }
+}
+
+@media(max-width:900px){
+  .logo-slider-section{
+    padding:10px 0 70px;
+  }
+
+  .logo-slider{
+    border-radius:22px;
+    padding:20px 0;
+  }
+
+  .slide-track{
+    gap:34px;
+    animation-duration:24s;
+  }
+
+  .logo-slide{
+    width:140px;
+    height:70px;
+    padding:14px 18px;
+  }
+
+  .logo-slide img{
+    max-height:42px;
+  }
+
+  .logo-slider:before,
+  .logo-slider:after{
+    width:64px;
+  }
+}
 </style>
 </head>
 
@@ -327,6 +452,57 @@
       </div>
     </section>
 
+<div class="logo-slider-section">
+  <div class="container">
+    <div class="logo-slider">
+      <div class="slide-track">
+
+        <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
+        </a>
+
+        <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
+        </a>
+
+        <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
+        </a>
+
+        <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
+        </a>
+
+        <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./GXO-logo.png" alt="GXO" loading="lazy">
+        </a>
+
+        <!-- Duplicated for seamless loop -->
+        <a href="https://www.bonfait.nl/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Bonfait-Logo.png" alt="Bonfait" loading="lazy">
+        </a>
+
+        <a href="https://www.vanloongroup.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./VanLoonGroup-Logo.png" alt="Van Loon Group" loading="lazy">
+        </a>
+
+        <a href="https://www.nunner.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Nunner-logo.png" alt="Nunner Logistics" loading="lazy">
+        </a>
+
+        <a href="https://maitre.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./Maitre-logo.png" alt="Maître" loading="lazy">
+        </a>
+
+        <a href="https://gxo.com/" target="_blank" rel="noreferrer" class="logo-slide">
+          <img src="./GXO-logo.png" alt="GXO" loading="lazy">
+        </a>
+
+      </div>
+    </div>
+  </div>
+</div>
+    
     <section id="contact" class="section-card">
       <div class="container contact-grid">
         <div>
