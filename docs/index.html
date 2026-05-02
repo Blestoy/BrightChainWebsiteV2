@@ -163,7 +163,22 @@
     .usp{grid-template-columns:1fr}
     .nav-inner{height:72px}
     section{padding:78px 0}
-    .mobile-menu{display:block;font-size:13px;text-transform:uppercase;font-weight:800;color:var(--primary)}
+    .mobile-dropdown{
+  display:block;
+}
+
+.mobile-menu{
+  display:block;
+  font-size:13px;
+  text-transform:uppercase;
+  font-weight:800;
+  color:#fff;
+  background:var(--primary);
+  border:0;
+  border-radius:12px;
+  padding:11px 16px;
+  cursor:pointer;
+}
     .logo-brand img{height:44px}
 
     .references{padding:78px 0 0}
@@ -235,6 +250,43 @@
     height:30px;
   }
 }
+
+  .mobile-dropdown{
+  display:none;
+  position:relative;
+}
+
+.mobile-dropdown-content{
+  display:none;
+  position:absolute;
+  right:0;
+  top:42px;
+  min-width:190px;
+  background:var(--card);
+  border:1px solid var(--border);
+  border-radius:18px;
+  box-shadow:0 18px 45px rgba(15,76,129,.18);
+  overflow:hidden;
+}
+
+.mobile-dropdown-content a{
+  display:block;
+  padding:14px 18px;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:800;
+  color:var(--text);
+  border-bottom:1px solid var(--border);
+}
+
+.mobile-dropdown-content a:last-child{
+  border-bottom:0;
+}
+
+.mobile-dropdown.open .mobile-dropdown-content{
+  display:block;
+}
 </style>
 </head>
 <a 
@@ -264,7 +316,19 @@
         <a class="btn btn-primary" href="#contact">Contact</a>
       </nav>
 
-      <a class="mobile-menu" href="#contact">Contact</a>
+      <div class="mobile-dropdown">
+  <button class="mobile-menu" type="button" id="mobile-menu-button">
+    Menu
+  </button>
+
+  <div class="mobile-dropdown-content" id="mobile-dropdown-content">
+    <a href="#diensten">Diensten</a>
+    <a href="#resultaten">Ervaring</a>
+    <a href="#over-mij">Over mij</a>
+    <a href="#referenties">Referenties</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
     </div>
   </header>
 
@@ -573,7 +637,20 @@ if (contactScrollBtn) {
   });
 }
 
-  
+ const mobileDropdown = document.querySelector(".mobile-dropdown");
+const mobileMenuButton = document.getElementById("mobile-menu-button");
+
+if (mobileDropdown && mobileMenuButton) {
+  mobileMenuButton.addEventListener("click", function() {
+    mobileDropdown.classList.toggle("open");
+  });
+
+  mobileDropdown.querySelectorAll("a").forEach(function(link) {
+    link.addEventListener("click", function() {
+      mobileDropdown.classList.remove("open");
+    });
+  });
+} 
 </script>
 
 </body>
