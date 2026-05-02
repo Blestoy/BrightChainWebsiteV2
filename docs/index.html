@@ -821,7 +821,14 @@
     display:block;
   }
 
+  /* =============================================
+     MOBILE — max-width: 900px
+     Only mobile-specific overrides below.
+     Desktop styles above are untouched.
+  ============================================= */
   @media(max-width:900px){
+
+    /* --- Nav --- */
     .nav-links{display:none}
     .mobile-dropdown{display:block}
 
@@ -838,6 +845,10 @@
       cursor:pointer;
     }
 
+    .nav-inner{height:72px}
+    .logo-brand img{height:44px}
+
+    /* --- Layout grids: single column --- */
     .grid,
     .cards,
     .case,
@@ -848,41 +859,94 @@
       grid-template-columns:1fr;
     }
 
-    .nav-inner{height:72px}
-    .logo-brand img{height:44px}
+    /* --- Section padding --- */
+    section{padding:64px 0}
 
-    section{padding:78px 0}
+    /* --- Container: tighter on mobile --- */
+    .container{
+      width:calc(100% - 32px);
+    }
 
+    /* --- Hero --- */
     .hero{
       min-height:auto;
-      padding-top:120px;
+      padding-top:100px;
+      padding-bottom:48px;
     }
 
     .visual{display:flex}
 
     .hero-photo{
-      max-width:360px;
+      max-width:300px;
       margin:0 auto;
     }
 
-    .cards{gap:18px}
-    .case{padding:28px}
-    .metrics{flex-wrap:wrap}
+    .signals{
+      margin-top:36px;
+      gap:16px;
+      font-size:13px;
+    }
+
+    /* --- Section title --- */
+    .section-title{
+      margin-bottom:40px;
+    }
+
+    .section-title p{font-size:16px}
+
+    /* --- Cards (diensten) --- */
+    .cards{gap:16px}
+
+    .card{padding:26px}
+
+    /* --- Cases (ervaring) --- */
+    .case{
+      padding:24px;
+      gap:20px;
+    }
+
+    .case h3{font-size:24px;margin:8px 0 16px}
+
+    .metrics{
+      flex-wrap:wrap;
+      gap:20px;
+    }
+
+    .metric strong{font-size:28px}
+
+    .case p{font-size:15px}
+
+    /* --- About --- */
     .usp{grid-template-columns:1fr}
 
-   .references{
-  padding:78px 0 0;
-}
+    .portrait{
+      max-width:280px;
+      margin:0 auto;
+    }
+
+    /* --- References section --- */
+    .references{
+      padding:64px 0 0;
+    }
 
     .references-copy{
       position:relative;
       top:auto;
-      margin-bottom:46px;
+      margin-bottom:40px;
     }
 
+    /* --- Stacked card area ---
+         We need:
+         1. Enough min-height for scroll animation to complete across all 4 cards
+         2. height:auto on sticky so the logo slider is NOT clipped
+         3. min-height:0 on ref-card so inset:0 + container height controls sizing exactly
+         4. position:relative + z-index on logo slider so it always paints ABOVE the
+            positioned .stacked-cards element (which would otherwise paint on top of it
+            in the same stacking context)
+    --- */
     .stacked-card-area{
       position:relative;
-      min-height:620px;
+      min-height:680px;
       max-width:100%;
       width:100%;
       margin-left:0;
@@ -891,32 +955,38 @@
     .stacked-card-sticky{
       position:sticky;
       top:100px;
-      height:455px;
+      /* height:auto lets the sticky container grow to fit both cards + slider,
+         preventing the slider from being clipped or hidden underneath */
+      height:auto;
     }
 
     .stacked-cards{
       position:relative;
-      height:345px;
-      margin-bottom:90px;
+      height:340px;
+      /* margin-bottom creates clearance between the lowest rotated card edge
+         and the top of the logo slider */
+      margin-bottom:52px;
     }
 
     .ref-card{
       position:absolute;
       inset:0;
-      min-height:320px;
+      /* Remove explicit min-height so inset:0 + container height is the sole
+         size authority — prevents inconsistent card heights across cards */
+      min-height:0;
       max-width:100%;
       width:100%;
       padding:24px;
       border-radius:22px;
     }
 
-    .ref-card h3{font-size:26px}
+    .ref-card h3{font-size:24px;margin:0 0 12px}
     .ref-card p{font-size:15px}
 
     .ref-card .ref-meta{
       font-size:11px;
-      margin-top:24px;
-      padding-top:16px;
+      margin-top:20px;
+      padding-top:14px;
     }
 
     .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
@@ -930,7 +1000,12 @@
       pointer-events:none;
     }
 
+    /* Logo slider: must be position:relative + z-index > 0 so it paints
+       in the "positioned" stacking layer, which is above the non-positioned
+       .stacked-cards element that would otherwise occlude it */
     .references-logo-slider{
+      position:relative;
+      z-index:6;
       padding:0;
       margin-top:0;
     }
@@ -963,6 +1038,24 @@
       width:42px;
     }
 
+    /* --- Contact section --- */
+    #contact{
+      /* Prevent excessive whitespace that can accumulate after the
+         stacked-card scroll animation area ends */
+      padding-top:52px;
+    }
+
+    .contact-panel{padding:24px}
+
+    /* --- Footer --- */
+    .footer{padding:52px 0 28px}
+
+    .bottom{
+      flex-direction:column;
+      gap:8px;
+    }
+
+    /* --- WhatsApp float --- */
     .whatsapp-float{
       width:68px;
       right:14px;
@@ -972,6 +1065,73 @@
 
     .whatsapp-float span{font-size:10px}
     .whatsapp-float img{width:28px;height:28px}
+  }
+
+  /* =============================================
+     SMALL PHONES — max-width: 480px
+     Additional tweaks for very small screens only.
+  ============================================= */
+  @media(max-width:480px){
+
+    .container{
+      width:calc(100% - 24px);
+    }
+
+    h1{
+      font-size:clamp(36px,9vw,54px);
+    }
+
+    .lead{font-size:17px}
+
+    .btn{
+      padding:13px 20px;
+      font-size:14px;
+    }
+
+    .actions{
+      flex-direction:column;
+      gap:10px;
+    }
+
+    .actions .btn{
+      width:100%;
+      text-align:center;
+    }
+
+    .hero-photo{max-width:260px}
+
+    .section-title h2{font-size:clamp(28px,8vw,40px)}
+
+    .card{padding:20px}
+    .card h3{font-size:20px}
+
+    .case h3{font-size:21px}
+    .metric strong{font-size:24px}
+
+    .stacked-cards{height:310px}
+
+    .ref-card{padding:20px}
+    .ref-card h3{font-size:20px}
+    .ref-card p{font-size:14px}
+
+    .about h2{font-size:clamp(28px,8vw,40px)}
+    .about p{font-size:16px}
+
+    .usp div{font-size:13px;padding:12px}
+
+    .references-copy h2{font-size:clamp(26px,8vw,38px)}
+
+    .contact-panel h3{font-size:24px}
+
+    .whatsapp-float{
+      width:58px;
+      right:12px;
+      bottom:12px;
+      padding:8px 5px;
+    }
+
+    .whatsapp-float img{width:24px;height:24px}
+    .whatsapp-float span{font-size:9px}
   }
 </style>
 </head>
@@ -989,13 +1149,13 @@
         <a href="#resultaten">Ervaring</a>
         <a href="#over-mij">Over mij</a>
         <a href="#referenties">Referenties</a>
-        <a class="btn btn-primary" href="#contact">Contact</a>
+        <a href="#contact">Contact</a>
+        <a class="btn btn-primary" href="#contact">Plan een kennismaking</a>
       </nav>
 
       <div class="mobile-dropdown">
-        <button class="mobile-menu" type="button" id="mobile-menu-button">Menu</button>
-
-        <div class="mobile-dropdown-content" id="mobile-dropdown-content">
+        <button class="mobile-menu" id="mobile-menu-button">Menu ▾</button>
+        <div class="mobile-dropdown-content">
           <a href="#diensten">Diensten</a>
           <a href="#resultaten">Ervaring</a>
           <a href="#over-mij">Over mij</a>
@@ -1062,7 +1222,7 @@
         <div class="cases">
           <article class="case"><div><div class="cat">IT Transformatie</div><h3>M365 Workplace Migration</h3><div class="metrics"><div class="metric"><strong>1500+</strong><span>gebruikers gemigreerd</span></div><div class="metric"><strong>4</strong><span>M365 tenant migraties</span></div></div></div><p>Grootschalige migratie naar M365 werkplekken. Naast de technische uitrol lag de focus sterk op adoptie, resulterend in direct verbeterde samenwerking en remote werken voor de hele organisatie.</p></article>
           <article class="case"><div><div class="cat">Project Management</div><h3>IT Post-Merger Integratie</h3><div class="metrics"><div class="metric"><strong>3</strong><span>maanden doorlooptijd</span></div><div class="metric"><strong>9</strong><span>locaties aangesloten</span></div></div></div><p>Complexe IT integratie na overname. Door strakke regie en pragmatische keuzes werd de integratie ruim binnen deadline afgerond met minimale verstoring van de kritische operatie.</p></article>
-          <article class="case"><div><div class="cat">Supply Chain</div><h3>WMS Implementatie</h3><div class="metrics"><div class="metric"><strong>Meerdere</strong><span>implementaties</span></div><div class="metric"><strong>“Soepelste”</strong><span>go-live ooit</span></div></div></div><p>Begeleiding van kritische Warehouse Management Systeem implementaties. De brug geslagen tussen de softwareleverancier en de werkvloer om een systeem te realiseren dat in de praktijk écht werkt.</p></article>
+          <article class="case"><div><div class="cat">Supply Chain</div><h3>WMS Implementatie</h3><div class="metrics"><div class="metric"><strong>Meerdere</strong><span>implementaties</span></div><div class="metric"><strong>"Soepelste"</strong><span>go-live ooit</span></div></div></div><p>Begeleiding van kritische Warehouse Management Systeem implementaties. De brug geslagen tussen de softwareleverancier en de werkvloer om een systeem te realiseren dat in de praktijk écht werkt.</p></article>
         </div>
       </div>
     </section>
@@ -1107,7 +1267,7 @@
           <div class="stacked-card-sticky">
             <div class="stacked-cards">
               <article class="ref-card"><div><h3>Heldere communicatie</h3><p>Duidelijkheid tussen IT, operatie, leverancier en management. Geen losse eindjes, maar heldere besluiten, acties en eigenaarschap.</p></div><div class="ref-meta">Stakeholder management</div></article>
-              <article class="ref-card"><div><h3>Grip op voortgang</h3><p>Structuur aanbrengen in planning, risico’s, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p></div><div class="ref-meta">PMO & projectregie</div></article>
+              <article class="ref-card"><div><h3>Grip op voortgang</h3><p>Structuur aanbrengen in planning, risico's, afhankelijkheden en besluitvorming. Daardoor blijft voor iedereen zichtbaar waar het project staat.</p></div><div class="ref-meta">PMO & projectregie</div></article>
               <article class="ref-card"><div><h3>Brug tussen IT en operatie</h3><p>Technische keuzes vertalen naar praktische impact op de werkvloer — en operationele behoefte vertalen naar uitvoerbare IT-oplossingen.</p></div><div class="ref-meta">IT & Supply Chain</div></article>
               <article class="ref-card"><div><h3>Resultaatgericht en hands-on</h3><p>Niet alleen adviseren, maar ook realiseren. Van strategie naar uitvoering, met focus op resultaat en continuïteit.</p></div><div class="ref-meta">Executiekracht</div></article>
             </div>
