@@ -927,6 +927,7 @@
     /* --- References section --- */
     .references{
       padding:64px 0 0;
+      overflow-x:hidden;
     }
 
     .references-copy{
@@ -946,7 +947,9 @@
     --- */
     .stacked-card-area{
       position:relative;
-      min-height:680px;
+      /* Enough height for JS scroll animation to cycle through all 4 cards
+         but not so tall it creates a huge whitespace gap before Contact */
+      min-height:560px;
       max-width:100%;
       width:100%;
       margin-left:0;
@@ -955,24 +958,23 @@
     .stacked-card-sticky{
       position:sticky;
       top:100px;
-      /* height:auto lets the sticky container grow to fit both cards + slider,
-         preventing the slider from being clipped or hidden underneath */
       height:auto;
     }
 
     .stacked-cards{
       position:relative;
       height:340px;
-      /* margin-bottom creates clearance between the lowest rotated card edge
-         and the top of the logo slider */
       margin-bottom:52px;
+      /* overflow:hidden clips the corners of rotated child cards that would
+         otherwise extend beyond the container and cause horizontal page overflow
+         on narrow phone screens. The sticky parent is unaffected. */
+      overflow:hidden;
+      border-radius:22px;
     }
 
     .ref-card{
       position:absolute;
       inset:0;
-      /* Remove explicit min-height so inset:0 + container height is the sole
-         size authority — prevents inconsistent card heights across cards */
       min-height:0;
       max-width:100%;
       width:100%;
@@ -989,13 +991,16 @@
       padding-top:14px;
     }
 
+    /* Reduced rotation angles on mobile: large angles push card corners
+       outside the viewport on narrow screens, causing horizontal scroll.
+       Small angles preserve the stacked-deck visual without overflowing. */
     .ref-card:nth-child(1){z-index:4;transform:rotate(0deg)}
-    .ref-card:nth-child(2){z-index:3;transform:rotate(-4deg)}
-    .ref-card:nth-child(3){z-index:2;transform:rotate(-8deg)}
-    .ref-card:nth-child(4){z-index:1;transform:rotate(-12deg)}
+    .ref-card:nth-child(2){z-index:3;transform:rotate(-2deg)}
+    .ref-card:nth-child(3){z-index:2;transform:rotate(-4deg)}
+    .ref-card:nth-child(4){z-index:1;transform:rotate(-6deg)}
 
     .ref-card.is-gone{
-      transform:translateY(-130px) rotate(8deg) !important;
+      transform:translateY(-130px) rotate(6deg) !important;
       opacity:0;
       pointer-events:none;
     }
