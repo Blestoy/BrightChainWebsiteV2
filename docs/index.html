@@ -243,26 +243,28 @@
 
   .signals{
   display:flex;
-  gap:14px;
+  align-items:center;
+  gap:20px;
   flex-wrap:wrap;
-  margin-top:48px;
+  margin-top:32px;
+  padding-top:20px;
+  border-top:1px solid var(--border);
 }
 
-.signal-block{
-  padding:10px 16px;
-  border-radius:12px;
-  background:rgba(50,145,201,.08);
-  border:1px solid rgba(50,145,201,.18);
-  font-size:13px;
-  font-weight:700;
-  color:var(--primary);
-  letter-spacing:.02em;
+.signals span{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:14px;
+  font-weight:600;
+  color:rgba(23,33,43,.78);
+  white-space:nowrap;
 }
 
-  .check{
-    color:var(--secondary);
-    font-weight:900;
-  }
+.check{
+  color:var(--secondary);
+  font-weight:900;
+}
 
   .visual{
     display:flex;
@@ -1408,9 +1410,9 @@
           </div>
 
           <div class="signals">
-          <div class="signal-block">Ervaring in IT, logistiek en FMCG</div>
-          <div class="signal-block">Verbindt business, IT en operatie</div>
-          <div class="signal-block">Van strategie tot uitvoering</div>
+          <span><span class="check">✓</span> Ervaring in IT, logistiek en FMCG</span>
+          <span><span class="check">✓</span> Verbindt business, IT en operatie</span>
+          <span><span class="check">✓</span> Van strategie tot uitvoering</span>
         </div>
         </div>
 
