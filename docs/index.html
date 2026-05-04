@@ -1255,11 +1255,11 @@
   fill:var(--secondary);
 }
 
-  .contact-cards{
+.contact-cards{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:1fr 1fr;
   gap:18px;
-  margin-bottom:40px;
+  margin-top:-28px;
 }
 
 .contact-card{
@@ -1479,83 +1479,68 @@
     </section>
 
     <section id="contact" class="section-card">
-      <div class="container contact-grid">
-        <div class="contact-cards">
-
-  <!-- Bel -->
-  <a href="tel:+31624255451" class="contact-card">
-    <div class="contact-icon">📞</div>
-    <h4>Bel mij</h4>
-    <p>+31 6 24255451</p>
-    <span>Ma-vr: 08:00 - 18:00</span>
-  </a>
-
-  <!-- Mail -->
-  <a href="mailto:renedekoning@brightchain.nl" class="contact-card">
-    <div class="contact-icon">✉️</div>
-    <h4>Mail mij</h4>
-    <p>renedekoning@brightchain.nl</p>
-    <span>Reactie binnen 24 uur</span>
-  </a>
-
-  <!-- WhatsApp -->
-  <a 
-    href="https://wa.me/31624255451?text=Hallo%20Ren%C3%A9%2C%20ik%20ben%20benieuwd%20wat%20BrightChain%20voor%20ons%20kan%20betekenen."
-    target="_blank"
-    class="contact-card"
-  >
-    <div class="contact-icon">💬</div>
-    <h4>Direct chatten</h4>
-    <p>WhatsApp</p>
-    <span>Direct contact</span>
-  </a>
-
-  <!-- LinkedIn -->
-  <a 
-    href="https://linkedin.com/in/renedekoning"
-    target="_blank"
-    class="contact-card"
-  >
-    <div class="contact-icon linkedin">in</div>
-    <h4>Let's connect</h4>
-    <p>LinkedIn</p>
-    <span>Professioneel netwerk</span>
-  </a>
-
-</div>
-        <div>
-          <div class="section-title">
-            <div class="label">Contact</div>
-            <h2>Klaar om te <span class="italic">realiseren?</span></h2>
-            <p>Of het nu gaat om een M365 migratie, een WMS implementatie of projectregie — laten we kennismaken.</p>
-          </div>
-
-          <p><strong>Direct contact</strong><br><a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a></p>
-          <p><strong>Connect</strong><br><a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer">LinkedIn Profiel →</a></p>
-        </div>
-
-        <div class="contact-panel">
-          <h3>Plan een kennismaking</h3>
-
-          <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
-            <div class="form-row"><label>Naam</label><input type="text" name="naam" required placeholder="Uw volledige naam"></div>
-            <div class="form-row"><label>E-mail</label><input type="email" name="email" required placeholder="uw@email.nl"></div>
-            <div class="form-row"><label>Telefoonnummer</label><input type="tel" name="telefoon" placeholder="+31 6 12345678"></div>
-            <div class="form-row"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Uw bedrijfsnaam"></div>
-            <div class="form-row"><label>Bericht</label><textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea></div>
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
-            <button class="btn btn-primary submit-btn" type="submit">
-  Verstuur bericht
-  <svg class="submit-icon" viewBox="0 0 24 24" aria-hidden="true">
-    <path d="M22 2L11 13" />
-    <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-  </svg>
-</button>
-          </form>
-        </div>
+  <div class="container contact-grid">
+    <div>
+      <div class="section-title">
+        <div class="label">Contact</div>
+        <h2>Klaar om te <span class="italic">realiseren?</span></h2>
+        <p>Of het nu gaat om een M365 migratie, een WMS implementatie of projectregie — laten we kennismaken.</p>
       </div>
-    </section>
+
+      <div class="contact-cards">
+        <a href="tel:+31624255451" class="contact-card">
+          <div class="contact-icon">📞</div>
+          <h4>Bel mij</h4>
+          <p>+31 6 24255451</p>
+          <span>Ma-vr: 08:00 - 18:00</span>
+        </a>
+
+        <a href="mailto:renedekoning@brightchain.nl" class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <h4>Mail mij</h4>
+          <p>renedekoning@brightchain.nl</p>
+          <span>Reactie binnen 24 uur</span>
+        </a>
+
+        <a href="https://wa.me/31624255451?text=Hallo%20Ren%C3%A9%2C%20ik%20ben%20benieuwd%20wat%20BrightChain%20voor%20ons%20kan%20betekenen." target="_blank" rel="noreferrer" class="contact-card">
+          <div class="contact-icon">💬</div>
+          <h4>Direct chatten</h4>
+          <p>WhatsApp</p>
+          <span>Direct contact</span>
+        </a>
+
+        <a href="https://linkedin.com/in/renedekoning" target="_blank" rel="noreferrer" class="contact-card">
+          <div class="contact-icon linkedin">in</div>
+          <h4>Let's connect</h4>
+          <p>LinkedIn</p>
+          <span>Professioneel netwerk</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-panel">
+      <h3>Plan een kennismaking</h3>
+
+      <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
+        <div class="form-row"><label>Naam</label><input type="text" name="naam" required placeholder="Uw volledige naam"></div>
+        <div class="form-row"><label>E-mail</label><input type="email" name="email" required placeholder="uw@email.nl"></div>
+        <div class="form-row"><label>Telefoonnummer</label><input type="tel" name="telefoon" placeholder="+31 6 12345678"></div>
+        <div class="form-row"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Uw bedrijfsnaam"></div>
+        <div class="form-row"><label>Bericht</label><textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea></div>
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
+
+        <button class="btn btn-primary submit-btn" type="submit">
+          Verstuur bericht
+          <svg class="submit-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M22 2L11 13" />
+            <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>
   </main>
 
   <footer class="footer">
