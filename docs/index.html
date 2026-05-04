@@ -1303,12 +1303,24 @@
   width:44px;
   height:44px;
   border-radius:12px;
-  background:rgba(50,145,201,.12);
+  background:var(--secondary);
   display:flex;
   align-items:center;
   justify-content:center;
   font-size:20px;
-  color:var(--secondary);
+  color:#fff;
+}
+
+  .contact-icon svg{
+  width:24px;
+  height:24px;
+  fill:#fff;
+}
+
+.contact-icon img{
+  width:24px;
+  height:24px;
+  display:block;
 }
 
 /* LinkedIn styling */
@@ -1489,7 +1501,11 @@
 
       <div class="contact-cards">
         <a href="tel:+31624255451" class="contact-card">
-          <div class="contact-icon">📞</div>
+          <div class="contact-icon">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M6.6 10.8c1.6 3.1 3.5 5 6.6 6.6l2.2-2.2c.3-.3.8-.4 1.2-.3 1.3.4 2.7.6 4.1.6.7 0 1.3.6 1.3 1.3V21c0 .7-.6 1.3-1.3 1.3C10.4 22.3 1.7 13.6 1.7 3.3 1.7 2.6 2.3 2 3 2h4.2c.7 0 1.3.6 1.3 1.3 0 1.4.2 2.8.6 4.1.1.4 0 .9-.3 1.2l-2.2 2.2z"/>
+  </svg>
+</div>
           <h4>Bel mij</h4>
           <p>+31 6 24255451</p>
           <span>Ma-vr: 08:00 - 18:00</span>
@@ -1503,7 +1519,9 @@
         </a>
 
         <a href="https://wa.me/31624255451?text=Hallo%20Ren%C3%A9%2C%20ik%20ben%20benieuwd%20wat%20BrightChain%20voor%20ons%20kan%20betekenen." target="_blank" rel="noreferrer" class="contact-card">
-          <div class="contact-icon">💬</div>
+          <div class="contact-icon">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+</div>
           <h4>Direct chatten</h4>
           <p>WhatsApp</p>
           <span>Direct contact</span>
