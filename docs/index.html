@@ -242,16 +242,22 @@
   }
 
   .signals{
-    display:flex;
-    gap:28px;
-    flex-wrap:wrap;
-    margin-top:58px;
-    padding-top:28px;
-    border-top:1px solid var(--border);
-    font-size:14px;
-    font-weight:700;
-    color:rgba(23,33,43,.76);
-  }
+  display:flex;
+  gap:14px;
+  flex-wrap:wrap;
+  margin-top:48px;
+}
+
+.signal-block{
+  padding:10px 16px;
+  border-radius:12px;
+  background:rgba(50,145,201,.08);
+  border:1px solid rgba(50,145,201,.18);
+  font-size:13px;
+  font-weight:700;
+  color:var(--primary);
+  letter-spacing:.02em;
+}
 
   .check{
     color:var(--secondary);
@@ -885,6 +891,18 @@
   background:#8ec5ea;
   border-radius:999px;
 }
+
+  @media(max-width:900px){
+  .signals{
+    gap:10px;
+  }
+
+  .signal-block{
+    width:100%;
+    text-align:center;
+  }
+}
+  
   @media(max-width:900px){
   .contact-cards{
     grid-template-columns:1fr 1fr;
@@ -1390,10 +1408,10 @@
           </div>
 
           <div class="signals">
-            <span><span class="check">✓</span> Binnen 24 uur reactie</span>
-            <span><span class="check">✓</span> Vrijblijvende kennismaking</span>
-            <span><span class="check">✓</span> Direct inzetbaar</span>
-          </div>
+          <div class="signal-block">Ervaring in IT, logistiek en FMCG</div>
+          <div class="signal-block">Verbindt business, IT en operatie</div>
+          <div class="signal-block">Van strategie tot uitvoering</div>
+        </div>
         </div>
 
         <div class="visual">
