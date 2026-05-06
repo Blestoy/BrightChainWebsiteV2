@@ -943,15 +943,36 @@
     .nav-inner{height:72px}
     .logo-brand img{height:44px}
 
-    .grid,
     .cards,
-    .case,
-    .about-grid,
-    .contact-grid,
-    .footer-grid,
-    .references-grid{
-      grid-template-columns:1fr;
-    }
+.case,
+.about-grid,
+.contact-grid,
+.footer-grid,
+.references-grid{
+  grid-template-columns:1fr;
+}
+
+.grid{
+  display:flex;
+  flex-direction:column;
+  gap:34px;
+}
+
+.grid > div:first-child{
+  display:contents;
+}
+
+.grid > div:first-child h1{order:1}
+.grid > div:first-child .lead{order:2}
+.grid > div:first-child .actions{order:3}
+
+.visual{
+  order:4;
+}
+
+.grid > div:first-child .signals{
+  order:5;
+}
 
     section{padding:64px 0}
 
