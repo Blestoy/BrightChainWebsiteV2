@@ -1176,14 +1176,20 @@
     }
 
     .actions{
-      flex-direction:column;
-      gap:10px;
-    }
+  flex-direction:row;
+  flex-wrap:nowrap;
+  gap:10px;
+}
 
-    .actions .btn{
-      width:100%;
-      text-align:center;
-    }
+.actions .btn{
+  width:auto;
+  flex:1 1 0;
+  min-width:0;
+  padding:13px 10px;
+  font-size:13px;
+  text-align:center;
+  white-space:nowrap;
+}
 
     .hero-photo{max-width:260px}
 
