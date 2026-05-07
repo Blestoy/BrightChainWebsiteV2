@@ -194,13 +194,13 @@
   }
 
   .hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    padding:130px 0 70px;
-    position:relative;
-    overflow:hidden;
-  }
+  min-height:100svh;
+  display:flex;
+  align-items:center;
+  padding:130px 0 70px;
+  position:relative;
+  overflow:hidden;
+}
 
   .grid{
     display:grid;
@@ -376,7 +376,9 @@
   .icon svg{
   width:28px;
   height:28px;
-  fill:var(--primary);
+  color:var(--primary);
+  fill:currentColor;
+  stroke:currentColor;
   display:block;
 }
 
@@ -1001,10 +1003,11 @@
     }
 
     .hero{
-      min-height:auto;
-      padding-top:137px;
-      padding-bottom:48px;
-    }
+  min-height:auto;
+  align-items:flex-start;
+  padding-top:155px;
+  padding-bottom:48px;
+}
 
     .visual{display:flex}
 
@@ -1460,8 +1463,9 @@
         </div>
 
         <div class="visual">
-          <div class="hero-photo">
-            <img src="./rene-de-koning.png" alt="René de Koning" class="fade-up delay-4">
+            <div class="hero-photo fade-up delay-4">
+  <img src="./rene-de-koning.png" alt="René de Koning">
+</div>
           </div>
         </div>
       </div>
@@ -1750,7 +1754,7 @@
             <li>PMO & Structuur</li>
             <li>IT Migraties & Implementaties</li>
             <li>Supply Chain & Logistiek</li>
-            <li>Continous Improvement</li>
+            <li>Continuous Improvement</li>
           </ul>
         </div>
       </div>
