@@ -161,7 +161,13 @@
   .mobile-dropdown-content a:last-child{border-bottom:0}
 
   .mobile-dropdown.open .mobile-dropdown-content{display:block}
-
+  
+  <button class="language-switcher mobile-language-switcher" type="button" data-lang-switch>
+  <span class="lang-option active" data-lang-label="nl">NL</span>
+  <span class="lang-divider">/</span>
+  <span class="lang-option" data-lang-label="en">EN</span>
+</button>
+  
   .btn{
     display:inline-flex;
     align-items:center;
@@ -197,6 +203,60 @@
     color:#fff;
     transform:translateY(-1px);
   }
+
+  .language-switcher{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+  min-height:46px;
+  padding:11px 15px;
+  border:1px solid var(--border);
+  border-radius:14px;
+  background:rgba(255,253,248,.42);
+  color:var(--text);
+  font-family:'Plus Jakarta Sans',Arial,sans-serif;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.12em;
+  cursor:pointer;
+  transition:.25s ease;
+}
+
+.language-switcher:hover{
+  background:rgba(50,145,201,.08);
+  border-color:rgba(50,145,201,.38);
+  box-shadow:0 10px 28px rgba(15,76,129,.10);
+  transform:translateY(-1px);
+}
+
+.lang-option{
+  opacity:.38;
+  transition:.25s ease;
+}
+
+.lang-option.active{
+  opacity:1;
+  color:var(--primary);
+  font-weight:900;
+}
+
+.lang-divider{
+  opacity:.32;
+}
+
+.mobile-language-switcher{
+  width:100%;
+  border:0;
+  border-radius:0;
+  background:rgba(50,145,201,.06);
+  padding:15px 18px;
+}
+
+.mobile-language-switcher:hover{
+  transform:none;
+  box-shadow:none;
+}
 
   .hero{
   min-height:100svh;
@@ -1578,6 +1638,11 @@
         <a href="#over-mij">Over mij</a>
         <a href="#referenties">Referenties</a>
         <a class="btn btn-primary" href="#contact">Plan een kennismaking</a>
+        <button class="language-switcher" type="button" data-lang-switch>
+        <span class="lang-option active" data-lang-label="nl">NL</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang-label="en">EN</span>
+        </button>
       </nav>
 
       <div class="mobile-dropdown">
@@ -2216,6 +2281,48 @@ const counterObserver = new IntersectionObserver(
 
 counters.forEach(counter => {
   counterObserver.observe(counter);
+});
+
+  let currentLanguage = "nl";
+
+const languageSwitchers = document.querySelectorAll("[data-lang-switch]");
+
+function updateLanguageSwitchers() {
+  languageSwitchers.forEach((switcher) => {
+    const nl = switcher.querySelector('[data-lang-label="nl"]');
+    const en = switcher.querySelector('[data-lang-label="en"]');
+
+    nl.classList.toggle("active", currentLanguage === "nl");
+    en.classList.toggle("active", currentLanguage === "en");
+
+    if (currentLanguage === "nl") {
+      switcher.innerHTML = `
+        <span class="lang-option active" data-lang-label="nl">NL</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang-label="en">EN</span>
+      `;
+    } else {
+      switcher.innerHTML = `
+        <span class="lang-option active" data-lang-label="en">EN</span>
+        <span class="lang-divider">/</span>
+        <span class="lang-option" data-lang-label="nl">NL</span>
+      `;
+    }
+  });
+}
+
+languageSwitchers.forEach((switcher) => {
+  switcher.addEventListener("click", () => {
+    document.body.style.opacity = ".96";
+
+    currentLanguage = currentLanguage === "nl" ? "en" : "nl";
+
+    updateLanguageSwitchers();
+
+    setTimeout(() => {
+      document.body.style.opacity = "1";
+    }, 180);
+  });
 });
 </script>
 
