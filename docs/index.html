@@ -115,18 +115,18 @@
   }
 
   .nav-links{
-    display:flex;
-    gap:24px;
-    align-items:center;
-  }
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
-  .nav-links a{
-    font-size:13px;
-    text-transform:uppercase;
-    letter-spacing:.12em;
-    font-weight:700;
-    color:rgba(23,33,43,.72);
-  }
+.nav-links a:not(.btn){
+  font-size:13px;
+  text-transform:uppercase;
+  letter-spacing:.12em;
+  font-weight:700;
+  color:rgba(23,33,43,.72);
+}
 
   .mobile-dropdown{
     display:none;
@@ -161,12 +161,6 @@
   .mobile-dropdown-content a:last-child{border-bottom:0}
 
   .mobile-dropdown.open .mobile-dropdown-content{display:block}
-  
-  <button class="language-switcher mobile-language-switcher" type="button" data-lang-switch>
-  <span class="lang-option active" data-lang-label="nl">NL</span>
-  <span class="lang-divider">/</span>
-  <span class="lang-option" data-lang-label="en">EN</span>
-</button>
   
   .btn{
     display:inline-flex;
@@ -1645,15 +1639,19 @@
         </button>
       </nav>
 
-      <div class="mobile-dropdown">
-        <button class="mobile-menu" id="mobile-menu-button">Menu ▾</button>
-        <div class="mobile-dropdown-content">
-          <a href="#diensten">Diensten</a>
-          <a href="#resultaten">Ervaring</a>
-          <a href="#over-mij">Over mij</a>
-          <a href="#referenties">Referenties</a>
-          <a href="#contact">Contact</a>
-        </div>
+      <div class="mobile-dropdown-content">
+  <a href="#diensten">Diensten</a>
+  <a href="#resultaten">Ervaring</a>
+  <a href="#over-mij">Over mij</a>
+  <a href="#referenties">Referenties</a>
+  <a href="#contact">Contact</a>
+
+  <button class="language-switcher mobile-language-switcher" type="button" data-lang-switch>
+    <span class="lang-option active" data-lang-label="nl">NL</span>
+    <span class="lang-divider">/</span>
+    <span class="lang-option" data-lang-label="en">EN</span>
+  </button>
+</div>
       </div>
     </div>
   </header>
