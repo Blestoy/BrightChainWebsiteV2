@@ -1914,23 +1914,44 @@
     <div class="contact-panel">
       <h3>Plan een kennismaking</h3>
 
-      <form id="contact-form" action="https://formsubmit.co/ajax/renedekoning@brightchain.nl" method="POST">
-        <div class="form-row"><label>Naam</label><input type="text" name="naam" required placeholder="Uw volledige naam"></div>
-        <div class="form-row"><label>E-mail</label><input type="email" name="email" required placeholder="uw@email.nl"></div>
-        <div class="form-row"><label>Telefoonnummer</label><input type="tel" name="telefoon" placeholder="+31 6 12345678"></div>
-        <div class="form-row"><label>Bedrijf</label><input type="text" name="bedrijf" placeholder="Uw bedrijfsnaam"></div>
-        <div class="form-row"><label>Bericht</label><textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea></div>
-        <input type="hidden" name="_captcha" value="false">
-        <input type="hidden" name="_subject" value="Nieuw bericht via BrightChain.nl">
+      <form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="8ad471b0-187f-4bc0-8a20-249f433724c0">
+  <input type="hidden" name="subject" value="Nieuw bericht via BrightChain.nl">
+  <input type="hidden" name="from_name" value="BrightChain Website">
 
-        <button class="btn btn-primary submit-btn" type="submit">
-          Verstuur bericht
-          <svg class="submit-icon" viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M22 2L11 13" />
-            <path d="M22 2L15 22L11 13L2 9L22 2Z" />
-          </svg>
-        </button>
-      </form>
+  <div class="form-row">
+    <label>Naam</label>
+    <input type="text" name="naam" required placeholder="Uw volledige naam">
+  </div>
+
+  <div class="form-row">
+    <label>E-mail</label>
+    <input type="email" name="email" required placeholder="uw@email.nl">
+  </div>
+
+  <div class="form-row">
+    <label>Telefoonnummer</label>
+    <input type="tel" name="telefoon" placeholder="+31 6 12345678">
+  </div>
+
+  <div class="form-row">
+    <label>Bedrijf</label>
+    <input type="text" name="bedrijf" placeholder="Uw bedrijfsnaam">
+  </div>
+
+  <div class="form-row">
+    <label>Bericht</label>
+    <textarea name="bericht" required placeholder="Waarmee kan ik u helpen?"></textarea>
+  </div>
+
+  <button class="btn btn-primary submit-btn" type="submit">
+    Verstuur bericht
+    <svg class="submit-icon" viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M22 2L11 13" />
+      <path d="M22 2L15 22L11 13L2 9L22 2Z" />
+    </svg>
+  </button>
+</form>
     </div>
   </div>
 </section>
