@@ -5,204 +5,619 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Privacy Statement | BrightChain</title>
-  <meta name="description" content="Privacy Statement van BrightChain." />
-  <link rel="icon" type="image/png" href="./logo-no-bg.png">
+
+  <meta
+    name="description"
+    content="Privacy Statement van BrightChain."
+  />
+
+  <link rel="icon" type="image/png" href="./logo-no-bg.png" />
+  <link rel="apple-touch-icon" href="./logo-no-bg.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
-    body{
-      font-family:Arial,sans-serif;
-      line-height:1.8;
-      max-width:900px;
-      margin:0 auto;
-      padding:60px 24px;
-      color:#17212b;
-      background:#f8f6f1;
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root{
+      --bg:#f8f6f1;
+      --card:#fffdf8;
+      --text:#17212b;
+      --muted:#5e6a76;
+      --primary:#0f4c81;
+      --secondary:#3291c9;
+      --accent:#e8d8bd;
+      --border:rgba(23,33,43,.12);
     }
 
-    h1,h2{ color:#0f4c81; }
+    *{
+      box-sizing:border-box;
+    }
 
-    h1{ margin-bottom:40px; }
+    html{
+      scroll-behavior:smooth;
+    }
 
-    h2{ margin-top:42px; }
+    body{
+      margin:0;
+      font-family:'Plus Jakarta Sans',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
 
-    a{ color:#0f4c81; }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .container{
+      width:min(1180px,calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    .nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(248,246,241,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-inner{
+      height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo-brand{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo-brand img{
+      height:68px;
+      width:auto;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+      color:rgba(23,33,43,.72);
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      padding:15px 24px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.2s;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff !important;
+    }
+
+    .btn-primary:hover{
+      background:var(--secondary);
+      transform:translateY(-1px);
+    }
+
+    /* =========================================
+       PRIVACY CONTENT
+    ========================================= */
+
+    .legal-page{
+      padding-top:90px;
+    }
+
+    .legal-content{
+      padding:80px 0;
+    }
+
+    .legal-content .container{
+      max-width:900px;
+    }
+
+    .label{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:800;
+      color:var(--primary);
+      margin-bottom:14px;
+    }
+
+    .legal-content h1{
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:clamp(38px,5vw,58px);
+      line-height:1.1;
+      margin:0 0 20px;
+      color:var(--primary);
+    }
+
+    .legal-content h2{
+      color:var(--primary);
+      margin-top:42px;
+      margin-bottom:14px;
+      font-size:28px;
+    }
+
+    .legal-content p,
+    .legal-content li{
+      color:rgba(23,33,43,.78);
+      font-size:17px;
+    }
+
+    .legal-content ul{
+      padding-left:22px;
+    }
+
+    .legal-content a{
+      color:var(--primary);
+      font-weight:600;
+    }
 
     .small{
-      color:#666;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:40px;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    .footer{
+      background:linear-gradient(
+        180deg,
+        #f8f6f1 0%,
+        #f4f7fa 100%
+      );
+      color:var(--text);
+      padding:70px 0 34px;
+      border-top:1px solid rgba(15,76,129,.08);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr .8fr 1fr;
+      gap:40px;
+    }
+
+    .footer p,
+    .footer li{
+      color:rgba(23,33,43,.72);
       font-size:14px;
     }
 
-    ul{ padding-left:20px; }
+    .footer ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:12px;
+    }
+
+    .footer h4{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      color:var(--primary);
+    }
+
+    .bottom{
+      border-top:1px solid rgba(15,76,129,.10);
+      margin-top:50px;
+      padding-top:22px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:rgba(23,33,43,.52);
+      font-size:12px;
+    }
+
+    .bottom a{
+      color:rgba(23,33,43,.72);
+      transition:.2s ease;
+    }
+
+    .bottom a:hover{
+      color:var(--secondary);
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:900px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav-inner{
+        height:78px;
+      }
+
+      .logo-brand img{
+        height:52px;
+      }
+
+      .legal-page{
+        padding-top:78px;
+      }
+
+      .legal-content{
+        padding:52px 0;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .bottom{
+        flex-direction:column;
+        gap:8px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>Privacy Statement</h1>
+  <!-- =========================================
+       HEADER / NAVIGATION
+  ========================================= -->
 
-  <p class="small">Laatst bijgewerkt: mei 2026</p>
+  <header class="nav">
+    <div class="container nav-inner">
 
-  <p>
-    BrightChain respecteert uw privacy en verwerkt persoonsgegevens zorgvuldig,
-    vertrouwelijk en in overeenstemming met de Algemene Verordening
-    Gegevensbescherming (AVG/GDPR).
-  </p>
+      <a href="./index.html" class="logo-brand">
+        <img
+          src="./brightchain-logo-new.png"
+          alt="BrightChain Logo"
+        />
+      </a>
 
-  <h2>1. Verantwoordelijke</h2>
+      <nav class="nav-links">
+        <a href="./index.html#diensten">Diensten</a>
+        <a href="./index.html#resultaten">Ervaring</a>
+        <a href="./index.html#over-mij">Over mij</a>
+        <a href="./index.html#referenties">Referenties</a>
 
-  <p>
-    BrightChain<br>
-    Bergenboulevard 211<br>
-    3825 AG Amersfoort<br>
-    Nederland
-  </p>
+        <a
+          class="btn btn-primary"
+          href="./index.html#contact"
+        >
+          Plan een kennismaking
+        </a>
+      </nav>
 
-  <p>
-    E-mail:
-    <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>
-  </p>
+    </div>
+  </header>
 
-  <h2>2. Welke persoonsgegevens verwerken wij?</h2>
+  <!-- =========================================
+       PRIVACY STATEMENT CONTENT
+  ========================================= -->
 
-  <p>
-    Wanneer u contact opneemt via deze website of rechtstreeks contact zoekt met
-    BrightChain, kunnen de volgende persoonsgegevens worden verwerkt:
-  </p>
+  <main class="legal-page">
 
-  <ul>
-    <li>Naam</li>
-    <li>E-mailadres</li>
-    <li>Telefoonnummer</li>
-    <li>Bedrijfsnaam</li>
-    <li>Inhoud van berichten of aanvragen</li>
-    <li>Technische gegevens zoals IP-adres, browserinformatie en apparaattype</li>
-  </ul>
+    <section class="legal-content">
+      <div class="container">
 
-  <h2>3. Doeleinden van verwerking</h2>
+        <div class="label">
+          Privacy Statement
+        </div>
 
-  <p>BrightChain verwerkt persoonsgegevens uitsluitend voor:</p>
+        <h1>Privacy Statement</h1>
 
-  <ul>
-    <li>Het beantwoorden van contactaanvragen</li>
-    <li>Het plannen van kennismakingsgesprekken</li>
-    <li>Zakelijke communicatie en dienstverlening</li>
-    <li>Het verbeteren van de werking, beveiliging en prestaties van de website</li>
-  </ul>
+        <p class="small">Laatst bijgewerkt: mei 2026</p>
 
-  <h2>4. Rechtsgrond voor verwerking</h2>
+        <p>
+          BrightChain respecteert uw privacy en verwerkt persoonsgegevens zorgvuldig,
+          vertrouwelijk en in overeenstemming met de Algemene Verordening
+          Gegevensbescherming (AVG/GDPR).
+        </p>
 
-  <p>BrightChain verwerkt persoonsgegevens op basis van:</p>
+        <h2>1. Verantwoordelijke</h2>
 
-  <ul>
-    <li>Toestemming van de gebruiker</li>
-    <li>Uitvoering van dienstverlening of zakelijke communicatie</li>
-    <li>Gerechtvaardigd belang, zoals beveiliging en verbetering van de website</li>
-  </ul>
+        <p>
+          BrightChain<br>
+          Bergenboulevard 211<br>
+          3825 AG Amersfoort<br>
+          Nederland
+        </p>
 
-  <h2>5. Bewaartermijn</h2>
+        <p>
+          E-mail:
+          <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>
+        </p>
 
-  <p>
-    Persoonsgegevens worden niet langer bewaard dan noodzakelijk is voor de
-    doeleinden waarvoor deze zijn verzameld, tenzij een wettelijke bewaartermijn
-    van toepassing is.
-  </p>
+        <h2>2. Welke persoonsgegevens verwerken wij?</h2>
 
-  <h2>6. Delen van persoonsgegevens</h2>
+        <p>
+          Wanneer u contact opneemt via deze website of rechtstreeks contact zoekt met
+          BrightChain, kunnen de volgende persoonsgegevens worden verwerkt:
+        </p>
 
-  <p>
-    BrightChain verkoopt persoonsgegevens nooit aan derden.
-  </p>
+        <ul>
+          <li>Naam</li>
+          <li>E-mailadres</li>
+          <li>Telefoonnummer</li>
+          <li>Bedrijfsnaam</li>
+          <li>Inhoud van berichten of aanvragen</li>
+          <li>Technische gegevens zoals IP-adres, browserinformatie en apparaattype</li>
+        </ul>
 
-  <p>
-    Voor hosting, websitefunctionaliteit, e-mailcommunicatie en formulierverwerking
-    maakt BrightChain gebruik van externe dienstverleners zoals Cloudflare, GitHub,
-    Microsoft 365 en Web3Forms.
-  </p>
+        <h2>3. Doeleinden van verwerking</h2>
 
-  <p>
-    Deze partijen verwerken gegevens uitsluitend voor het leveren van hun diensten
-    en treffen passende beveiligingsmaatregelen waar redelijkerwijs mogelijk.
-  </p>
+        <p>BrightChain verwerkt persoonsgegevens uitsluitend voor:</p>
 
-  <h2>7. Internationale doorgifte</h2>
+        <ul>
+          <li>Het beantwoorden van contactaanvragen</li>
+          <li>Het plannen van kennismakingsgesprekken</li>
+          <li>Zakelijke communicatie en dienstverlening</li>
+          <li>Het verbeteren van de werking, beveiliging en prestaties van de website</li>
+        </ul>
 
-  <p>
-    Sommige gebruikte cloud- en hostingdiensten kunnen persoonsgegevens verwerken
-    buiten de Europese Economische Ruimte (EER). Waar van toepassing worden
-    passende maatregelen genomen om persoonsgegevens adequaat te beschermen.
-  </p>
+        <h2>4. Rechtsgrond voor verwerking</h2>
 
-  <h2>8. Beveiliging</h2>
+        <p>BrightChain verwerkt persoonsgegevens op basis van:</p>
 
-  <p>
-    BrightChain neemt passende technische en organisatorische maatregelen om
-    persoonsgegevens te beschermen tegen verlies, misbruik, onbevoegde toegang
-    of ongewenste openbaarmaking.
-  </p>
+        <ul>
+          <li>Toestemming van de gebruiker</li>
+          <li>Uitvoering van dienstverlening of zakelijke communicatie</li>
+          <li>Gerechtvaardigd belang, zoals beveiliging en verbetering van de website</li>
+        </ul>
 
-  <p>
-    Hierbij wordt onder andere gebruikgemaakt van beveiligde HTTPS-verbindingen,
-    toegangsbeperking waar passend, actuele software- en beveiligingsupdates en
-    beveiligde cloud- en hostingdiensten.
-  </p>
+        <h2>5. Bewaartermijn</h2>
 
-  <h2>9. Cookies</h2>
+        <p>
+          Persoonsgegevens worden niet langer bewaard dan noodzakelijk is voor de
+          doeleinden waarvoor deze zijn verzameld, tenzij een wettelijke bewaartermijn
+          van toepassing is.
+        </p>
 
-  <p>
-    Deze website gebruikt momenteel geen trackingcookies of advertentiecookies.
-  </p>
+        <h2>6. Delen van persoonsgegevens</h2>
 
-  <p>
-    Mogelijk worden beperkte functionele of technische cookies gebruikt die
-    noodzakelijk zijn voor het correct functioneren, beveiligen en optimaliseren
-    van de website.
-  </p>
+        <p>
+          BrightChain verkoopt persoonsgegevens nooit aan derden.
+        </p>
 
-  <h2>10. Minderjarigen</h2>
+        <p>
+          Voor hosting, websitefunctionaliteit, e-mailcommunicatie en formulierverwerking
+          maakt BrightChain gebruik van externe dienstverleners zoals Cloudflare, GitHub,
+          Microsoft 365 en Web3Forms.
+        </p>
 
-  <p>
-    Deze website en dienstverlening richten zich op zakelijke gebruikers en personen
-    van 16 jaar en ouder. BrightChain verzamelt niet bewust persoonsgegevens van
-    minderjarigen.
-  </p>
+        <p>
+          Deze partijen verwerken gegevens uitsluitend voor het leveren van hun diensten
+          en treffen passende beveiligingsmaatregelen waar redelijkerwijs mogelijk.
+        </p>
 
-  <h2>11. Uw rechten</h2>
+        <h2>7. Internationale doorgifte</h2>
 
-  <p>U heeft op grond van de AVG het recht om:</p>
+        <p>
+          Sommige gebruikte cloud- en hostingdiensten kunnen persoonsgegevens verwerken
+          buiten de Europese Economische Ruimte (EER). Waar van toepassing worden
+          passende maatregelen genomen om persoonsgegevens adequaat te beschermen.
+        </p>
 
-  <ul>
-    <li>Uw persoonsgegevens in te zien</li>
-    <li>Uw gegevens te laten corrigeren</li>
-    <li>Uw gegevens te laten verwijderen</li>
-    <li>Bezwaar te maken tegen verwerking</li>
-    <li>Uw toestemming in te trekken</li>
-    <li>Een klacht in te dienen bij de Autoriteit Persoonsgegevens</li>
-  </ul>
+        <h2>8. Beveiliging</h2>
 
-  <p>
-    Verzoeken kunnen worden ingediend via:
-    <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>.
-  </p>
+        <p>
+          BrightChain neemt passende technische en organisatorische maatregelen om
+          persoonsgegevens te beschermen tegen verlies, misbruik, onbevoegde toegang
+          of ongewenste openbaarmaking.
+        </p>
 
-  <p>
-    BrightChain reageert zo spoedig mogelijk op verzoeken met betrekking tot
-    persoonsgegevens, uiterlijk binnen de wettelijke termijn van één maand.
-  </p>
+        <p>
+          Hierbij wordt onder andere gebruikgemaakt van beveiligde HTTPS-verbindingen,
+          toegangsbeperking waar passend, actuele software- en beveiligingsupdates en
+          beveiligde cloud- en hostingdiensten.
+        </p>
 
-  <h2>12. Wijzigingen</h2>
+        <h2>9. Cookies</h2>
 
-  <p>
-    BrightChain behoudt zich het recht voor dit privacy statement te wijzigen.
-    De meest actuele versie wordt altijd gepubliceerd op deze website.
-  </p>
+        <p>
+          Deze website gebruikt momenteel geen trackingcookies of advertentiecookies.
+        </p>
 
-  <h2>13. Contact</h2>
+        <p>
+          Mogelijk worden beperkte functionele of technische cookies gebruikt die
+          noodzakelijk zijn voor het correct functioneren, beveiligen en optimaliseren
+          van de website.
+        </p>
 
-  <p>
-    Voor vragen over dit privacy statement of de verwerking van persoonsgegevens
-    kunt u contact opnemen via:
-    <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>.
-  </p>
+        <h2>10. Minderjarigen</h2>
+
+        <p>
+          Deze website en dienstverlening richten zich op zakelijke gebruikers en personen
+          van 18 jaar en ouder. BrightChain verzamelt niet bewust persoonsgegevens van
+          minderjarigen.
+        </p>
+
+        <h2>11. Uw rechten</h2>
+
+        <p>U heeft op grond van de AVG het recht om:</p>
+
+        <ul>
+          <li>Uw persoonsgegevens in te zien</li>
+          <li>Uw gegevens te laten corrigeren</li>
+          <li>Uw gegevens te laten verwijderen</li>
+          <li>Bezwaar te maken tegen verwerking</li>
+          <li>Uw toestemming in te trekken</li>
+          <li>Een klacht in te dienen bij de Autoriteit Persoonsgegevens</li>
+        </ul>
+
+        <p>
+          Verzoeken kunnen worden ingediend via:
+          <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>.
+        </p>
+
+        <p>
+          BrightChain reageert zo spoedig mogelijk op verzoeken met betrekking tot
+          persoonsgegevens, uiterlijk binnen de wettelijke termijn van één maand.
+        </p>
+
+        <h2>12. Wijzigingen</h2>
+
+        <p>
+          BrightChain behoudt zich het recht voor dit privacy statement te wijzigen.
+          De meest actuele versie wordt altijd gepubliceerd op deze website.
+        </p>
+
+        <h2>13. Contact</h2>
+
+        <p>
+          Voor vragen over dit privacy statement of de verwerking van persoonsgegevens
+          kunt u contact opnemen via:
+          <a href="mailto:renedekoning@brightchain.nl">renedekoning@brightchain.nl</a>.
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h4>Contactgegevens</h4>
+
+          <ul>
+            <li>Bergenboulevard 211</li>
+            <li>3825 AG Amersfoort</li>
+
+            <li>
+              <a href="tel:+31624255451">
+                +31 6 24255451
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:renedekoning@brightchain.nl">
+                renedekoning@brightchain.nl
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Navigatie</h4>
+
+          <ul>
+            <li>
+              <a href="./index.html#diensten">Diensten</a>
+            </li>
+
+            <li>
+              <a href="./index.html#resultaten">Ervaring</a>
+            </li>
+
+            <li>
+              <a href="./index.html#over-mij">Over mij</a>
+            </li>
+
+            <li>
+              <a href="./index.html#referenties">Referenties</a>
+            </li>
+
+            <li>
+              <a href="./index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Diensten</h4>
+
+          <ul>
+            <li>Project Management</li>
+            <li>PMO & Structuur</li>
+            <li>IT Migraties & Implementaties</li>
+            <li>Supply Chain & Logistiek</li>
+            <li>Continuous Improvement</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="bottom">
+
+        <span>
+          © 2026 BrightChain. Alle rechten voorbehouden.
+          ·
+          <a href="./privacy-policy.html">
+            Privacy Statement
+          </a>
+          ·
+          <a href="./terms.html">
+            Algemene Voorwaarden
+          </a>
+        </span>
+
+        <span>
+          KvK: 98331914 · Amersfoort, Nederland
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
