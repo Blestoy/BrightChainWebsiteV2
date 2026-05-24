@@ -6,245 +6,606 @@
 
   <title>Algemene Voorwaarden | BrightChain</title>
 
-  <meta name="description" content="Algemene voorwaarden van BrightChain." />
+  <meta
+    name="description"
+    content="Algemene voorwaarden van BrightChain."
+  />
 
-  <link rel="icon" type="image/png" href="./logo-no-bg.png">
+  <link rel="icon" type="image/png" href="./logo-no-bg.png" />
+  <link rel="apple-touch-icon" href="./logo-no-bg.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+    rel="stylesheet"
+  />
 
   <style>
+
+    /* =========================================
+       ROOT VARIABLES
+    ========================================= */
+
+    :root{
+      --bg:#f8f6f1;
+      --card:#fffdf8;
+      --text:#17212b;
+      --muted:#5e6a76;
+      --primary:#0f4c81;
+      --secondary:#3291c9;
+      --accent:#e8d8bd;
+      --border:rgba(23,33,43,.12);
+    }
+
+    *{
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
     body{
-      font-family:Arial,sans-serif;
-      line-height:1.8;
-      max-width:1000px;
-      margin:0 auto;
-      padding:60px 24px;
-      color:#17212b;
-      background:#f8f6f1;
-    }
-
-    h1,h2{
-      color:#0f4c81;
-    }
-
-    h1{
-      margin-bottom:40px;
-    }
-
-    h2{
-      margin-top:46px;
+      margin:0;
+      font-family:'Plus Jakarta Sans',Arial,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
     }
 
     a{
-      color:#0f4c81;
+      color:inherit;
+      text-decoration:none;
     }
 
-    ul{
-      padding-left:20px;
+    .container{
+      width:min(1180px,calc(100% - 40px));
+      margin:0 auto;
+    }
+
+    /* =========================================
+       NAVIGATION
+    ========================================= */
+
+    .nav{
+      position:fixed;
+      top:0;
+      left:0;
+      right:0;
+      z-index:1000;
+      background:rgba(248,246,241,.92);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid var(--border);
+    }
+
+    .nav-inner{
+      height:90px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+
+    .logo-brand{
+      display:flex;
+      align-items:center;
+    }
+
+    .logo-brand img{
+      height:68px;
+      width:auto;
+      display:block;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:24px;
+      align-items:center;
+    }
+
+    .nav-links a{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      font-weight:700;
+      color:rgba(23,33,43,.72);
+      transition:.2s ease;
+    }
+
+    .nav-links a:hover{
+      color:var(--primary);
+    }
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      border-radius:14px;
+      padding:15px 24px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:.2s;
+    }
+
+    .btn-primary{
+      background:var(--primary);
+      color:#fff !important;
+    }
+
+    .btn-primary:hover{
+      background:var(--secondary);
+      transform:translateY(-1px);
+    }
+
+    /* =========================================
+       LEGAL CONTENT
+    ========================================= */
+
+    .legal-page{
+      padding-top:90px;
+    }
+
+    .legal-content{
+      padding:80px 0;
+    }
+
+    .legal-content .container{
+      max-width:900px;
+    }
+
+    .label{
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.16em;
+      font-weight:800;
+      color:var(--primary);
+      margin-bottom:14px;
+    }
+
+    .legal-content h1{
+      font-family:'Playfair Display',Georgia,serif;
+      font-size:clamp(38px,5vw,58px);
+      line-height:1.1;
+      margin:0 0 20px;
+    }
+
+    .legal-content h2{
+      color:var(--primary);
+      margin-top:42px;
+      margin-bottom:14px;
+      font-size:28px;
+    }
+
+    .legal-content p,
+    .legal-content li{
+      color:rgba(23,33,43,.78);
+      font-size:17px;
+    }
+
+    .legal-content ul{
+      padding-left:22px;
     }
 
     .small{
-      color:#666;
+      color:var(--muted);
+      font-size:14px;
+      margin-bottom:40px;
+    }
+
+    /* =========================================
+       FOOTER
+    ========================================= */
+
+    .footer{
+      background:linear-gradient(
+        180deg,
+        #f8f6f1 0%,
+        #f4f7fa 100%
+      );
+      color:var(--text);
+      padding:70px 0 34px;
+      border-top:1px solid rgba(15,76,129,.08);
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.4fr .8fr 1fr;
+      gap:40px;
+    }
+
+    .footer p,
+    .footer li{
+      color:rgba(23,33,43,.72);
       font-size:14px;
     }
+
+    .footer ul{
+      list-style:none;
+      margin:0;
+      padding:0;
+      display:grid;
+      gap:12px;
+    }
+
+    .footer h4{
+      text-transform:uppercase;
+      letter-spacing:.14em;
+      font-size:12px;
+      color:var(--primary);
+    }
+
+    .bottom{
+      border-top:1px solid rgba(15,76,129,.10);
+      margin-top:50px;
+      padding-top:22px;
+      display:flex;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+      color:rgba(23,33,43,.52);
+      font-size:12px;
+    }
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media(max-width:900px){
+
+      .nav-links{
+        display:none;
+      }
+
+      .nav-inner{
+        height:78px;
+      }
+
+      .logo-brand img{
+        height:52px;
+      }
+
+      .legal-page{
+        padding-top:78px;
+      }
+
+      .legal-content{
+        padding:52px 0;
+      }
+
+      .footer-grid{
+        grid-template-columns:1fr;
+      }
+
+      .bottom{
+        flex-direction:column;
+        gap:8px;
+      }
+    }
+
   </style>
 </head>
 
 <body>
 
-  <h1>Algemene Voorwaarden</h1>
+  <!-- =========================================
+       HEADER / NAVIGATION
+  ========================================= -->
 
-  <p class="small">
-    Laatst bijgewerkt: mei 2026
-  </p>
+  <header class="nav">
+    <div class="container nav-inner">
 
-  <p>
-    Deze algemene voorwaarden zijn van toepassing op alle aanbiedingen,
-    offertes, werkzaamheden, diensten en overeenkomsten van BrightChain.
-  </p>
+      <a href="./index.html" class="logo-brand">
+        <img
+          src="./brightchain-logo-new.png"
+          alt="BrightChain Logo"
+        />
+      </a>
 
-  <h2>1. Definities</h2>
+      <nav class="nav-links">
+        <a href="./index.html#diensten">Diensten</a>
+        <a href="./index.html#resultaten">Ervaring</a>
+        <a href="./index.html#over-mij">Over mij</a>
+        <a href="./index.html#referenties">Referenties</a>
 
-  <p>
-    In deze algemene voorwaarden wordt verstaan onder:
-  </p>
+        <a
+          class="btn btn-primary"
+          href="./index.html#contact"
+        >
+          Plan een kennismaking
+        </a>
+      </nav>
 
-  <ul>
-    <li><strong>BrightChain:</strong> handelsnaam van René de Koning, gevestigd te Amersfoort.</li>
-    <li><strong>Opdrachtgever:</strong> iedere natuurlijke persoon of rechtspersoon die diensten afneemt van BrightChain.</li>
-    <li><strong>Overeenkomst:</strong> iedere afspraak tussen BrightChain en opdrachtgever met betrekking tot dienstverlening.</li>
-    <li><strong>Diensten:</strong> alle werkzaamheden op het gebied van IT projectmanagement, consultancy, PMO, supply chain, logistiek, cloudtransformaties, implementaties, workshops, trainingen en advies.</li>
-  </ul>
+    </div>
+  </header>
 
-  <h2>2. Toepasselijkheid</h2>
+  <!-- =========================================
+       TERMS CONTENT
+  ========================================= -->
 
-  <ul>
-    <li>Deze voorwaarden zijn van toepassing op alle offertes, overeenkomsten en dienstverlening van BrightChain.</li>
-    <li>Afwijkingen zijn uitsluitend geldig indien schriftelijk overeengekomen.</li>
-    <li>Eventuele algemene voorwaarden van opdrachtgever worden uitdrukkelijk van de hand gewezen.</li>
-    <li>Indien één bepaling ongeldig blijkt, blijven de overige bepalingen volledig van kracht.</li>
-  </ul>
+  <main class="legal-page">
 
-  <h2>3. Offertes en overeenkomsten</h2>
+    <section class="legal-content">
+      <div class="container">
 
-  <ul>
-    <li>Alle offertes van BrightChain zijn vrijblijvend, tenzij schriftelijk anders vermeld.</li>
-    <li>Offertes zijn 30 dagen geldig.</li>
-    <li>Een overeenkomst komt tot stand na schriftelijke bevestiging, akkoord per e-mail of zodra BrightChain met de werkzaamheden start.</li>
-    <li>BrightChain mag werkzaamheden geheel of gedeeltelijk laten uitvoeren door derden.</li>
-  </ul>
+        <div class="label">
+          Algemene Voorwaarden
+        </div>
 
-  <h2>4. Dienstverlening</h2>
+        <h1>
+          Algemene Voorwaarden van BrightChain
+        </h1>
 
-  <p>
-    BrightChain levert dienstverlening op het gebied van:
-  </p>
+        <p class="small">
+          Laatst bijgewerkt: mei 2026
+        </p>
 
-  <ul>
-    <li>IT Project Management</li>
-    <li>PMO & governance</li>
-    <li>Microsoft 365 migraties</li>
-    <li>Cloud- en infrastructuurtransformaties</li>
-    <li>Supply chain & logistieke optimalisatie</li>
-    <li>WMS implementaties</li>
-    <li>Procesverbetering en continuous improvement</li>
-    <li>Consultancy, workshops en trainingen</li>
-  </ul>
+        <h2>1. Definities</h2>
 
-  <p>
-    BrightChain voert werkzaamheden uit op basis van een inspanningsverplichting,
-    tenzij schriftelijk anders overeengekomen. Resultaten kunnen afhankelijk zijn
-    van factoren buiten de invloed van BrightChain.
-  </p>
+        <p>
+          In deze algemene voorwaarden wordt verstaan onder:
+        </p>
 
-  <h2>5. Verplichtingen opdrachtgever</h2>
+        <ul>
+          <li>
+            <strong>BrightChain:</strong>
+            handelsnaam van de dienstverlening uitgevoerd door René de Koning.
+          </li>
 
-  <ul>
-    <li>Opdrachtgever verstrekt tijdig alle benodigde informatie voor uitvoering van de opdracht.</li>
-    <li>Opdrachtgever is verantwoordelijk voor de juistheid en volledigheid van aangeleverde gegevens.</li>
-    <li>Vertraging of extra kosten door onvolledige informatie kunnen aanvullend worden doorberekend.</li>
-  </ul>
+          <li>
+            <strong>Opdrachtgever:</strong>
+            iedere natuurlijke persoon of rechtspersoon die gebruik maakt van de diensten van BrightChain.
+          </li>
 
-  <h2>6. Planning en uitvoering</h2>
+          <li>
+            <strong>Diensten:</strong>
+            alle werkzaamheden op het gebied van IT projectmanagement, consultancy, supply chain, logistiek, PMO, implementaties en aanverwante dienstverlening.
+          </li>
+        </ul>
 
-  <ul>
-    <li>Opgegeven termijnen zijn indicatief en gelden niet als fatale termijn.</li>
-    <li>BrightChain zal werkzaamheden naar beste inzicht, ervaring en professionaliteit uitvoeren.</li>
-    <li>BrightChain behoudt zich het recht voor werkzaamheden gefaseerd uit te voeren.</li>
-  </ul>
+        <h2>2. Toepasselijkheid</h2>
 
-  <h2>7. Tarieven en betaling</h2>
+        <p>
+          Deze algemene voorwaarden zijn van toepassing op alle offertes,
+          overeenkomsten en dienstverlening van BrightChain.
+        </p>
 
-  <ul>
-    <li>Tenzij anders vermeld zijn alle tarieven exclusief btw.</li>
-    <li>Facturen dienen binnen 14 dagen na factuurdatum te worden voldaan.</li>
-    <li>Bij te late betaling is opdrachtgever van rechtswege in verzuim.</li>
-    <li>BrightChain behoudt zich het recht voor werkzaamheden op te schorten bij openstaande betalingen.</li>
-  </ul>
+        <p>
+          Afwijkingen van deze voorwaarden zijn uitsluitend geldig indien deze
+          schriftelijk zijn overeengekomen.
+        </p>
 
-  <h2>8. Meerwerk</h2>
+        <h2>3. Dienstverlening</h2>
 
-  <p>
-    Werkzaamheden buiten de oorspronkelijk overeengekomen scope worden beschouwd
-    als meerwerk en kunnen aanvullend worden gefactureerd.
-  </p>
+        <p>
+          BrightChain voert opdrachten uit naar beste inzicht, expertise en
+          professionele standaarden.
+        </p>
 
-  <h2>9. Annulering en beëindiging</h2>
+        <p>
+          BrightChain heeft een inspanningsverplichting en geen
+          resultaatsverplichting, tenzij schriftelijk anders overeengekomen.
+        </p>
 
-  <ul>
-    <li>Opdrachtgever kan een afspraak of opdracht schriftelijk annuleren.</li>
-    <li>Bij annulering binnen 7 dagen voor een geplande workshop, training of sessie kan BrightChain kosten in rekening brengen.</li>
-    <li>BrightChain mag een overeenkomst beëindigen indien opdrachtgever structureel tekortschiet in verplichtingen.</li>
-  </ul>
+        <h2>4. Offertes en overeenkomsten</h2>
 
-  <h2>10. Aansprakelijkheid</h2>
+        <p>
+          Offertes zijn vrijblijvend tenzij uitdrukkelijk anders vermeld.
+        </p>
 
-  <p>
-    BrightChain is uitsluitend aansprakelijk voor directe schade die het
-    rechtstreekse gevolg is van aantoonbare opzet of grove nalatigheid.
-  </p>
+        <p>
+          Een overeenkomst komt tot stand zodra opdrachtgever schriftelijk
+          akkoord geeft op een voorstel, offerte of opdrachtbevestiging.
+        </p>
 
-  <ul>
-    <li>BrightChain is niet aansprakelijk voor indirecte schade, gevolgschade, winstderving of bedrijfsstagnatie.</li>
-    <li>BrightChain is niet aansprakelijk voor schade ontstaan door onjuiste of onvolledige informatie van opdrachtgever.</li>
-    <li>De aansprakelijkheid van BrightChain is beperkt tot het bedrag van de betreffende opdracht of factuurwaarde.</li>
-  </ul>
+        <h2>5. Tarieven en betaling</h2>
 
-  <h2>11. Overmacht</h2>
+        <p>
+          Alle genoemde tarieven zijn exclusief btw tenzij anders vermeld.
+        </p>
 
-  <p>
-    BrightChain is niet gehouden verplichtingen na te komen indien sprake is van
-    overmacht, waaronder storingen, cyberincidenten, netwerkproblemen,
-    overheidsmaatregelen, ziekte, uitval van cloudleveranciers of andere
-    omstandigheden buiten redelijke controle.
-  </p>
+        <p>
+          Facturen dienen te worden voldaan binnen de op de factuur vermelde
+          betalingstermijn.
+        </p>
 
-  <h2>12. Intellectueel eigendom</h2>
+        <p>
+          Bij overschrijding van de betalingstermijn behoudt BrightChain zich
+          het recht voor wettelijke rente en eventuele incassokosten in rekening
+          te brengen.
+        </p>
 
-  <ul>
-    <li>Alle door BrightChain ontwikkelde documenten, adviezen, presentaties, templates, rapportages, ontwerpen en materialen blijven eigendom van BrightChain, tenzij schriftelijk anders overeengekomen.</li>
-    <li>Het is niet toegestaan materiaal zonder schriftelijke toestemming te kopiëren, verspreiden of commercieel te gebruiken.</li>
-  </ul>
+        <h2>6. Aansprakelijkheid</h2>
 
-  <h2>13. Vertrouwelijkheid</h2>
+        <p>
+          BrightChain is uitsluitend aansprakelijk voor directe schade die het
+          gevolg is van aantoonbare opzet of grove nalatigheid.
+        </p>
 
-  <p>
-    Beide partijen behandelen vertrouwelijke informatie strikt vertrouwelijk en
-    gebruiken deze uitsluitend voor uitvoering van de overeenkomst.
-  </p>
+        <p>
+          Iedere aansprakelijkheid is beperkt tot maximaal het bedrag dat voor
+          de betreffende opdracht is gefactureerd.
+        </p>
 
-  <h2>14. Privacy en gegevensverwerking</h2>
+        <p>
+          BrightChain is niet aansprakelijk voor:
+        </p>
 
-  <p>
-    BrightChain verwerkt persoonsgegevens conform het privacy statement op deze website.
-  </p>
+        <ul>
+          <li>Indirecte schade</li>
+          <li>Gevolgschade</li>
+          <li>Gederfde winst</li>
+          <li>Dataverlies</li>
+          <li>Bedrijfsonderbreking</li>
+        </ul>
 
-  <p>
-    BrightChain maakt gebruik van moderne cloud- en hostingdiensten zoals
-    Microsoft 365, Cloudflare, GitHub en Web3Forms voor communicatie,
-    hosting en dienstverlening. :contentReference[oaicite:0]{index=0}
-  </p>
+        <h2>7. Vertrouwelijkheid</h2>
 
-  <h2>15. Gebruik van AI en automatisering</h2>
+        <p>
+          Beide partijen verplichten zich tot geheimhouding van vertrouwelijke
+          informatie die in het kader van de samenwerking wordt gedeeld.
+        </p>
 
-  <p>
-    BrightChain kan gebruikmaken van AI-tools, automatisering en cloudsoftware
-    ter ondersteuning van dienstverlening, analyses, documentatie en
-    procesoptimalisatie.
-  </p>
+        <h2>8. Intellectueel eigendom</h2>
 
-  <p>
-    Hierbij wordt zorgvuldig omgegaan met vertrouwelijkheid, privacy en
-    beveiliging van gegevens conform geldende wet- en regelgeving.
-  </p>
+        <p>
+          Alle intellectuele eigendomsrechten op door BrightChain verstrekte
+          documenten, adviezen, ontwerpen en materialen blijven eigendom van
+          BrightChain tenzij schriftelijk anders overeengekomen.
+        </p>
 
-  <h2>16. Toepasselijk recht</h2>
+        <h2>9. Overmacht</h2>
 
-  <p>
-    Op alle overeenkomsten en dienstverlening van BrightChain is uitsluitend
-    Nederlands recht van toepassing.
-  </p>
+        <p>
+          BrightChain is niet gehouden tot het nakomen van verplichtingen indien
+          sprake is van overmacht, waaronder begrepen storingen, internetuitval,
+          ziekte, overheidsmaatregelen of andere omstandigheden buiten redelijke
+          controle.
+        </p>
 
-  <h2>17. Geschillen</h2>
+        <h2>10. Beëindiging</h2>
 
-  <p>
-    Geschillen worden bij voorkeur in onderling overleg opgelost.
-  </p>
+        <p>
+          Beide partijen kunnen de overeenkomst schriftelijk beëindigen met
+          inachtneming van eventueel overeengekomen opzegtermijnen.
+        </p>
 
-  <p>
-    Indien dit niet mogelijk blijkt, worden geschillen voorgelegd aan de bevoegde
-    rechter in Nederland.
-  </p>
+        <p>
+          Reeds uitgevoerde werkzaamheden blijven verschuldigd.
+        </p>
 
-  <h2>18. Contact</h2>
+        <h2>11. Toepasselijk recht</h2>
 
-  <p>
-    Voor vragen over deze algemene voorwaarden kunt u contact opnemen via:
-  </p>
+        <p>
+          Op alle overeenkomsten en dienstverlening van BrightChain is
+          Nederlands recht van toepassing.
+        </p>
 
-  <p>
-    <a href="mailto:renedekoning@brightchain.nl">
-      renedekoning@brightchain.nl
-    </a>
-  </p>
+        <p>
+          Geschillen worden voorgelegd aan de bevoegde rechter in Nederland.
+        </p>
+
+        <h2>12. Contact</h2>
+
+        <p>
+          BrightChain<br />
+          Bergenboulevard 211<br />
+          3825 AG Amersfoort<br />
+          Nederland
+        </p>
+
+        <p>
+          E-mail:
+          <a href="mailto:renedekoning@brightchain.nl">
+            renedekoning@brightchain.nl
+          </a>
+        </p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+
+  <footer class="footer">
+
+    <div class="container">
+
+      <div class="footer-grid">
+
+        <div>
+          <h4>Contactgegevens</h4>
+
+          <ul>
+            <li>Bergenboulevard 211</li>
+            <li>3825 AG Amersfoort</li>
+
+            <li>
+              <a href="tel:+31624255451">
+                +31 6 24255451
+              </a>
+            </li>
+
+            <li>
+              <a href="mailto:renedekoning@brightchain.nl">
+                renedekoning@brightchain.nl
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Navigatie</h4>
+
+          <ul>
+            <li>
+              <a href="./index.html#diensten">Diensten</a>
+            </li>
+
+            <li>
+              <a href="./index.html#resultaten">Ervaring</a>
+            </li>
+
+            <li>
+              <a href="./index.html#over-mij">Over mij</a>
+            </li>
+
+            <li>
+              <a href="./index.html#referenties">Referenties</a>
+            </li>
+
+            <li>
+              <a href="./index.html#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Diensten</h4>
+
+          <ul>
+            <li>Project Management</li>
+            <li>PMO & Structuur</li>
+            <li>IT Migraties & Implementaties</li>
+            <li>Supply Chain & Logistiek</li>
+            <li>Continuous Improvement</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="bottom">
+
+        <span>
+          © 2026 BrightChain. Alle rechten voorbehouden.
+          ·
+          <a href="./privacy-policy.html">
+            Privacy Statement
+          </a>
+          ·
+          <a href="./terms.html">
+            Algemene Voorwaarden
+          </a>
+        </span>
+
+        <span>
+          KvK: 98331914 · Amersfoort, Nederland
+        </span>
+
+      </div>
+
+    </div>
+
+  </footer>
 
 </body>
 </html>
